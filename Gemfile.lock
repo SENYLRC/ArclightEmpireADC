@@ -99,6 +99,9 @@ GEM
       view_component (>= 2.66, < 4)
     blacklight-locale_picker (1.1.0)
       rails (>= 5.2.3, < 7.2)
+    blacklight_dynamic_sitemap (1.0.0)
+      blacklight (> 7.0)
+      rails
     bootsnap (1.18.3)
       msgpack (~> 1.2)
     bootstrap (5.3.2)
@@ -399,6 +402,7 @@ PLATFORMS
 DEPENDENCIES
   arclight
   blacklight-locale_picker
+  blacklight_dynamic_sitemap
   bootsnap
   bootstrap (~> 5.1)
   capybara

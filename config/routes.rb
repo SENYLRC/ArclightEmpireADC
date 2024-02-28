@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   mount Blacklight::Engine => '/'
+   #SENYLRC added sitemap feb 2024
+  mount BlacklightDynamicSitemap::Engine => '/'
   mount Arclight::Engine => '/'
 
   root to: "arclight/repositories#index"

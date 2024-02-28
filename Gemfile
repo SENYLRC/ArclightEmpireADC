@@ -66,6 +66,7 @@ group :test do
   gem "selenium-webdriver"
 end
 gem "arclight"
+gem 'blacklight_dynamic_sitemap'
 
 group :development, :test do
   gem "solr_wrapper", ">= 0.3"
