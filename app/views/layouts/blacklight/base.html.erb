@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<link rel="stylesheet" id="wp-block-navigation-css" href="https://beta.empireadc.org/wp-includes/blocks/navigation/style.min.css?ver=6.4.3" media="all">
     <title><%= render_page_title %></title>
     <script>
       document.querySelector('html').classList.remove('no-js');
@@ -16,24 +16,64 @@
       <%= javascript_importmap_tags %>
     <% elsif defined? Propshaft %>
       <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
     <% else %>
       <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
       <%= javascript_include_tag "blacklight/blacklight", type: 'module' %>
+
       <script type="module">
         import githubAutoCompleteElement from 'https://cdn.skypack.dev/@github/auto-complete-element';
       </script>
+
     <% end %>
+    <%= javascript_include_tag "interactivity.min", "view.min" %>
 
     <%= csrf_meta_tags %>
     <%= content_for(:head) %>
   </head>
   <body class="<%= render_body_class %>">
-    <nav id="skip-link" role="navigation" aria-label="<%= t('blacklight.skip_links.label') %>">
-      <%= link_to t('blacklight.skip_links.search_field'), '#search_field', class: 'element-invisible element-focusable rounded-bottom py-2 px-3', data: { turbolinks: 'false' } %>
-      <%= link_to t('blacklight.skip_links.main_content'), '#main-container', class: 'element-invisible element-focusable rounded-bottom py-2 px-3', data: { turbolinks: 'false' } %>
-      <%= content_for(:skip_links) %>
-    </nav>
-    <%= render partial: 'shared/header_navbar' %>
+
+
+
+
+<header class="wp-block-template-part">
+<div class="wp-block-group has-primary-lighter-color has-primary-darker-background-color has-text-color has-background has-link-color wp-elements-becb08ea2b9094985ee9cacb00f036b3 is-layout-constrained wp-container-core-group-layout-1 wp-block-group-is-layout-constrained" style="margin-top:var(--wp--preset--spacing--none);margin-bottom:var(--wp--preset--spacing--none);padding-top:var(--wp--preset--spacing--none);padding-right:0;padding-bottom:var(--wp--preset--spacing--none);padding-left:0"></div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-layout-2 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-layout-1 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%">
+<figure class="wp-block-image aligncenter size-full"><img fetchpriority="high" decoding="async" width="452" height="238" src="http://beta.empireadc.org/wp-content/uploads/2024/01/ead_logo.gif" alt="" class="wp-image-12"></figure>
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%;"><p class="has-text-align-center wp-block-site-tagline">Finding Aids at Your Fingertips</p>
+
+<nav class="has-text-color has-base-lighter-color has-background has-base-darker-background-color is-responsive items-justified-center wp-block-navigation is-content-justification-center is-layout-flex wp-container-core-navigation-layout-1 wp-block-navigation-is-layout-flex" aria-label="EmpireADC Menu" data-wp-interactive="" data-wp-context="{&quot;core&quot;:{&quot;navigation&quot;:{&quot;overlayOpenedBy&quot;:[],&quot;type&quot;:&quot;overlay&quot;,&quot;roleAttribute&quot;:&quot;&quot;,&quot;ariaLabel&quot;:&quot;Menu&quot;}}}"><button aria-haspopup="true" aria-label="Open menu" class="wp-block-navigation__responsive-container-open " data-wp-on--click="actions.core.navigation.openMenuOnClick" data-wp-on--keydown="actions.core.navigation.handleMenuKeydown"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="7.5" width="16" height="1.5"></rect><rect x="4" y="15" width="16" height="1.5"></rect></svg></button>
+			<div class="wp-block-navigation__responsive-container" style="" id="modal-1" data-wp-class--has-modal-open="selectors.core.navigation.isMenuOpen" data-wp-class--is-menu-open="selectors.core.navigation.isMenuOpen" data-wp-effect="effects.core.navigation.initMenu" data-wp-on--keydown="actions.core.navigation.handleMenuKeydown" data-wp-on--focusout="actions.core.navigation.handleMenuFocusout" tabindex="-1">
+				<div class="wp-block-navigation__responsive-close" tabindex="-1">
+					<div class="wp-block-navigation__responsive-dialog" data-wp-bind--aria-modal="selectors.core.navigation.ariaModal" data-wp-bind--aria-label="selectors.core.navigation.ariaLabel" data-wp-bind--role="selectors.core.navigation.roleAttribute" data-wp-effect="effects.core.navigation.focusFirstElement">
+							<button aria-label="Close menu" class="wp-block-navigation__responsive-container-close" data-wp-on--click="actions.core.navigation.closeMenuOnClick"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M13 11.8l6.1-6.3-1-1-6.1 6.2-6.1-6.2-1 1 6.1 6.3-6.5 6.7 1 1 6.5-6.6 6.5 6.6 1-1z"></path></svg></button>
+						<div class="wp-block-navigation__responsive-container-content" id="modal-1-content">
+							<ul class="wp-block-navigation__container has-text-color has-base-lighter-color has-background has-base-darker-background-color is-responsive items-justified-center wp-block-navigation"><li class="has-text-color has-base-lighter-color has-background has-base-darker-background-color wp-block-navigation-item current-menu-item wp-block-home-link"><a class="wp-block-home-link__content wp-block-navigation-item__content" href="https://beta.empireadc.org" rel="home" aria-current="page">Home</a></li><li data-wp-context="{ &quot;core&quot;: { &quot;navigation&quot;: { &quot;submenuOpenedBy&quot;: {}, &quot;type&quot;: &quot;submenu&quot; } } }" data-wp-effect="effects.core.navigation.initMenu" data-wp-interactive="" data-wp-on--focusout="actions.core.navigation.handleMenuFocusout" data-wp-on--keydown="actions.core.navigation.handleMenuKeydown" data-wp-on--mouseenter="actions.core.navigation.openMenuOnHover" data-wp-on--mouseleave="actions.core.navigation.closeMenuOnHover" tabindex="-1" class=" wp-block-navigation-item has-child open-on-hover-click wp-block-navigation-submenu"><a class="wp-block-navigation-item__content" href="https://beta.empireadc.org/search/">Search &amp; Browse</a><button data-wp-bind--aria-expanded="selectors.core.navigation.isMenuOpen" data-wp-on--click="actions.core.navigation.toggleMenuOnClick" aria-label="Search &amp; Browse submenu" class="wp-block-navigation__submenu-icon wp-block-navigation-submenu__toggle" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></button><ul data-wp-on--focus="actions.core.navigation.openMenuOnFocus" class="wp-block-navigation__submenu-container wp-block-navigation-submenu"><li class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="https://beta.empireadc.org/search/repositories/"><span class="wp-block-navigation-item__label">Repositories</span></a></li><li class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="https://beta.empireadc.org/search/collections/"><span class="wp-block-navigation-item__label">Finding Aids</span></a></li></ul></li><li data-wp-context="{ &quot;core&quot;: { &quot;navigation&quot;: { &quot;submenuOpenedBy&quot;: {}, &quot;type&quot;: &quot;submenu&quot; } } }" data-wp-effect="effects.core.navigation.initMenu" data-wp-interactive="" data-wp-on--focusout="actions.core.navigation.handleMenuFocusout" data-wp-on--keydown="actions.core.navigation.handleMenuKeydown" data-wp-on--mouseenter="actions.core.navigation.openMenuOnHover" data-wp-on--mouseleave="actions.core.navigation.closeMenuOnHover" tabindex="-1" class=" wp-block-navigation-item has-child open-on-hover-click wp-block-navigation-submenu"><a class="wp-block-navigation-item__content" href="https://beta.empireadc.org/participate/"> Participate</a><button data-wp-bind--aria-expanded="selectors.core.navigation.isMenuOpen" data-wp-on--click="actions.core.navigation.toggleMenuOnClick" aria-label="Participate submenu" class="wp-block-navigation__submenu-icon wp-block-navigation-submenu__toggle" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></button><ul data-wp-on--focus="actions.core.navigation.openMenuOnFocus" class="wp-block-navigation__submenu-container wp-block-navigation-submenu"><li class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="https://beta.empireadc.org/participate/"><span class="wp-block-navigation-item__label">Participate in EmpireADC</span></a></li><li class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="https://beta.empireadc.org/participate/application/"><span class="wp-block-navigation-item__label">Application To Join EmpireADC</span></a></li><li class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="https://beta.empireadc.org/participate/faq/"><span class="wp-block-navigation-item__label">Participation FAQ</span></a></li><li class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="https://beta.empireadc.org/about/fees/"><span class="wp-block-navigation-item__label">Participation Fees</span></a></li></ul></li><li data-wp-context="{ &quot;core&quot;: { &quot;navigation&quot;: { &quot;submenuOpenedBy&quot;: {}, &quot;type&quot;: &quot;submenu&quot; } } }" data-wp-effect="effects.core.navigation.initMenu" data-wp-interactive="" data-wp-on--focusout="actions.core.navigation.handleMenuFocusout" data-wp-on--keydown="actions.core.navigation.handleMenuKeydown" data-wp-on--mouseenter="actions.core.navigation.openMenuOnHover" data-wp-on--mouseleave="actions.core.navigation.closeMenuOnHover" tabindex="-1" class=" wp-block-navigation-item has-child open-on-hover-click wp-block-navigation-submenu"><a class="wp-block-navigation-item__content" href="https://beta.empireadc.org/about/">About</a><button data-wp-bind--aria-expanded="selectors.core.navigation.isMenuOpen" data-wp-on--click="actions.core.navigation.toggleMenuOnClick" aria-label="About submenu" class="wp-block-navigation__submenu-icon wp-block-navigation-submenu__toggle" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></button><ul data-wp-on--focus="actions.core.navigation.openMenuOnFocus" class="wp-block-navigation__submenu-container wp-block-navigation-submenu"><li class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="https://beta.empireadc.org/about/"><span class="wp-block-navigation-item__label">About EmpireADC</span></a></li><li class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="https://beta.empireadc.org/about/projecthistory/"><span class="wp-block-navigation-item__label">Project History</span></a></li><li class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="https://beta.empireadc.org/about/standards/"><span class="wp-block-navigation-item__label">Standards &amp; Technology</span></a></li><li class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="https://beta.empireadc.org/about/leadership/"><span class="wp-block-navigation-item__label">Leadership</span></a></li></ul></li></ul>
+						</div>
+					</div>
+				</div>
+			</div></nav></div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<p></p>
+</header>
+
 
     <main id="main-container" class="<%= container_classes %>" role="main" aria-label="<%= t('blacklight.main.aria.main_container') %>">
       <%= content_for(:container_header) %>
