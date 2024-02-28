@@ -35,7 +35,6 @@
 
 
 
-
 <header class="wp-block-template-part">
 <div class="wp-block-group has-primary-lighter-color has-primary-darker-background-color has-text-color has-background has-link-color wp-elements-becb08ea2b9094985ee9cacb00f036b3 is-layout-constrained wp-container-core-group-layout-1 wp-block-group-is-layout-constrained" style="margin-top:var(--wp--preset--spacing--none);margin-bottom:var(--wp--preset--spacing--none);padding-top:var(--wp--preset--spacing--none);padding-right:0;padding-bottom:var(--wp--preset--spacing--none);padding-left:0"></div>
 
@@ -74,6 +73,7 @@
 <p></p>
 </header>
 
+    <%= render partial: 'shared/header_navbar' %>
 
     <main id="main-container" class="<%= container_classes %>" role="main" aria-label="<%= t('blacklight.main.aria.main_container') %>">
       <%= content_for(:container_header) %>
