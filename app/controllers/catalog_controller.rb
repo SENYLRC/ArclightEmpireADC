@@ -138,13 +138,14 @@ class CatalogController < ApplicationController
     #  across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation
     #  (note: It is case sensitive when searching values)
-
+    config.add_facet_field 'repository', field: 'repository_ssim', limit: 10
     config.add_facet_field 'collection', field: 'collection_ssim', limit: 10
     config.add_facet_field 'creators', field: 'creator_ssim', limit: 10
     config.add_facet_field 'date_range', field: 'date_range_isim', range: true
     config.add_facet_field 'level', field: 'level_ssim', limit: 10
     config.add_facet_field 'names', field: 'names_ssim', limit: 10
-    config.add_facet_field 'repository', field: 'repository_ssim', limit: 10
+#SENYLRC Change
+#   config.add_facet_field 'repository', field: 'repository_ssim', limit: 10
     config.add_facet_field 'places', field: 'geogname_ssim', limit: 10
     config.add_facet_field 'access_subjects', field: 'access_subjects_ssim', limit: 10
 
