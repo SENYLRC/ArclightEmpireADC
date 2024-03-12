@@ -9,17 +9,28 @@
 #               - Pass a size_accessor key to pull the size of
 #                 the file from an accessor in the solr document
 #
+
+#  Add this to your apache config for the download button to work
+#   Alias /ead /<location-to-eads>/eads
+#    <Directory /<location-to-eads>/eads>
+#        Options none
+#        Require all granted
+#    </Directory>
+
+
+
 sample_unitid:
-  pdf:
-    href: 'http://example.com/sample.pdf'
-    size: '1.23MB'
+ # pdf:
+ #   href: 'http://example.com/sample.pdf'
+ #   size: '1.23MB'
   ead:
-    href: 'http://example.com/sample.xml'
+    href: 'http://arclight.senylrc.org/search/xml/sample.xml'
     size: 123456
     # size_accessor: 'level'
 default:
-  disabled: true
-  pdf:
-    template: 'http://example.com/%{unitid}.pdf'
+  disabled: false
+#  pdf:
+ #   template: 'http://example.com/%{unitid}.pdf'
   ead:
-    template: 'http://example.com/%{unitid}.xml'
+    template: 'https://beta.empireadc.org/ead/%{repository_id}/%{eadid}.xml'
+
