@@ -1664,3 +1664,7 @@
 p.has-text-align-center.wp-block-site-tagline{
 margin-bottom:unset;
 }
+
+.al-masthead.bg-light{
+display:none;
+}
