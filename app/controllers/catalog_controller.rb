@@ -148,6 +148,8 @@ class CatalogController < ApplicationController
 #   config.add_facet_field 'repository', field: 'repository_ssim', limit: 10
     config.add_facet_field 'places', field: 'geogname_ssim', limit: 10
     config.add_facet_field 'access_subjects', field: 'access_subjects_ssim', limit: 10
+#SENYLRC Change
+    config.add_facet_field 'genreform_sim', label: 'Format', limit: 10  #senylrc
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -318,6 +320,13 @@ class CatalogController < ApplicationController
       last_word_connector: '<br/>'
     }
 
+# SENYLRC Collection Show Page - Indexed Terms Section
+    config.add_indexed_terms_field 'genreform', field: 'geneform_sim', label: 'Format', link_to_facet: true, separator_options: {
+      words_connector: '<br/>',
+      two_words_connector: '<br/>',
+      last_word_connector: '<br/>'
+    }
+
     config.add_indexed_terms_field 'names_coll', field: 'names_coll_ssim', separator_options: {
       words_connector: '<br/>',
       two_words_connector: '<br/>',
@@ -374,6 +383,14 @@ class CatalogController < ApplicationController
 
     # Component Show Page - Indexed Terms Section
     config.add_component_indexed_terms_field 'access_subjects', field: 'access_subjects_ssim', link_to_facet: true, separator_options: {
+      words_connector: '<br/>',
+      two_words_connector: '<br/>',
+      last_word_connector: '<br/>'
+    }
+
+
+    # SENYLRC Component Show Page - Indexed Terms Section
+    config.add_component_indexed_terms_field 'genreform', field: 'geneform_sim', label: 'Format', link_to_facet: true, separator_options: {
       words_connector: '<br/>',
       two_words_connector: '<br/>',
       last_word_connector: '<br/>'
