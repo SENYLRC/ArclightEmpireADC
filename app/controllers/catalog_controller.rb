@@ -149,7 +149,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'places', field: 'geogname_ssim', limit: 10
     config.add_facet_field 'access_subjects', field: 'access_subjects_ssim', limit: 10
 #SENYLRC Change
-    config.add_facet_field 'genreform_sim', label: 'Format', limit: 10  #senylrc
+    config.add_facet_field 'format', field: 'genreform_ssim', limit: 10
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -294,6 +294,7 @@ class CatalogController < ApplicationController
     config.add_background_field 'custodhist', field: 'custodhist_html_tesm', helper_method: :render_html_tags
     config.add_background_field 'processinfo', field: 'processinfo_html_tesm', helper_method: :render_html_tags
     config.add_background_field 'arrangement', field: 'arrangement_html_tesm', helper_method: :render_html_tags
+config.add_background_field 'did_note_ssm', label: 'General Note', helper_method: :render_html_tags
     config.add_background_field 'accruals', field: 'accruals_html_tesm', helper_method: :render_html_tags
     config.add_background_field 'phystech', field: 'phystech_html_tesm', helper_method: :render_html_tags
     config.add_background_field 'physloc', field: 'physloc_html_tesm', helper_method: :render_html_tags
@@ -321,7 +322,7 @@ class CatalogController < ApplicationController
     }
 
 # SENYLRC Collection Show Page - Indexed Terms Section
-    config.add_indexed_terms_field 'genreform', field: 'geneform_sim', label: 'Format', link_to_facet: true, separator_options: {
+    config.add_indexed_terms_field 'geneform_sim', label: 'Format', link_to_facet: true, separator_options: {
       words_connector: '<br/>',
       two_words_connector: '<br/>',
       last_word_connector: '<br/>'
@@ -390,7 +391,7 @@ class CatalogController < ApplicationController
 
 
     # SENYLRC Component Show Page - Indexed Terms Section
-    config.add_component_indexed_terms_field 'genreform', field: 'geneform_sim', label: 'Format', link_to_facet: true, separator_options: {
+    config.add_component_indexed_terms_field 'geneform_sim', label: 'Format', link_to_facet: true, separator_options: {
       words_connector: '<br/>',
       two_words_connector: '<br/>',
       last_word_connector: '<br/>'

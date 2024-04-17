@@ -1,236 +1,138 @@
 # frozen_string_literal: true
 
-require 'logger'
-require 'traject'
-require 'traject/nokogiri_reader'
-require 'traject_plus'
-require 'traject_plus/macros'
-require 'arclight/level_label'
-require 'arclight/normalized_date'
-require 'arclight/normalized_title'
-require 'active_model/conversion' ## Needed for Arclight::Repository
-require 'active_support/core_ext/array/wrap'
-require 'arclight/digital_object'
-require 'arclight/year_range'
-require 'arclight/repository'
-require 'arclight/traject/nokogiri_namespaceless_reader'
+# This file holds DUL customizations to top-level (collection-level)
+# EAD2002 indexing rules specified in ArcLight core.
+# See: https://github.com/projectblacklight/arclight/blob/main/lib/arclight/traject/ead2_config.rb
 
-# rubocop:disable Style/MixinUsage
-extend TrajectPlus::Macros
-# rubocop:enable Style/MixinUsage
+# Note that to override any existing rules from core, we need to redefine them and
+# blank out the result of the core indexing like this:
+# context.output_hash['some_field_ssim'] = nil
 
-NAME_ELEMENTS = %w[corpname famname name persname].freeze
-
-SEARCHABLE_NOTES_FIELDS = %w[
-  accessrestrict
-  accruals
-  altformavail
-  appraisal
-  arrangement
-  bibliography
-  bioghist
-  custodhist
-  fileplan
-  note
-  odd
-  originalsloc
-  otherfindaid
-  phystech
-  prefercite
-  processinfo
-  relatedmaterial
-  scopecontent
-  separatedmaterial
-  userestrict
-].freeze
-
-DID_SEARCHABLE_NOTES_FIELDS = %w[
-  abstract
-  materialspec
-  physloc
-  note
-].freeze
+require 'arclight'
+require_relative '../dul_arclight/digital_object'
+require_relative 'dul_arclight/dul_compressed_reader'
+require_relative 'dul_arclight/ua_record_group'
 
 settings do
-  provide 'component_traject_config', File.join(__dir__, 'ead2_component_config.rb')
-  provide 'date_normalizer', 'Arclight::NormalizedDate'
-  provide 'title_normalizer', 'Arclight::NormalizedTitle'
-  provide 'reader_class_name', 'Arclight::Traject::NokogiriNamespacelessReader'
-  provide 'solr_writer.commit_on_close', 'true'
-  provide 'repository', ENV.fetch('REPOSITORY_ID', nil)
-  provide 'logger', Logger.new($stderr)
+  provide 'component_traject_config', File.join(__dir__, 'dul_ead2_component_config.rb')
+  # DUL Customization: Swap out Arclight::Traject::NokogiriNamespacelessReader with
+  # custom DulCompressedReader to remove namespaces AND squish unwanted whitespace.
+  provide 'reader_class_name', 'DulArclight::DulCompressedReader'
 end
 
-each_record do |_record, context|
-  next unless settings['repository']
+load_config_file(File.expand_path("#{Arclight::Engine.root}/lib/arclight/traject/ead2_config.rb"))
 
-  context.clipboard[:repository] = Arclight::Repository.find_by(
-    slug: settings['repository']
-  ).name
+# DUL CUSTOMIZATION: Get title with formatting tags intact
+to_field 'title_html_ssm', extract_xpath('/ead/archdesc/did/unittitle', to_text: false)
+
+# DUL CUSTOMIZATION: Special case for collection-level accessrestrict that is
+# intended to display loudly as a warning banner throughout the collection
+to_field 'accessrestrict_collection_banner_html_tesm',
+         extract_xpath("/ead/archdesc/accessrestrict[head='banner' or head='Banner']/*[local-name()!='head']",
+                       to_text: false)
+
+# DUL CUSTOMIZATION: Permalink & ARK. NOTE the ARK will be derived from the
+# permalink, and not the other way around; ARK is not stored atomically in the EAD.
+# Strip out any wayward spaces or linebreaks that might end up in the url attribute
+# and only capture the value if it's a real permalink (with an ARK).
+to_field 'permalink_ssi' do |record, accumulator|
+  url = record.at_xpath('/ead/eadheader/eadid').attribute('url')&.value || ''
+  url.gsub(/[[:space:]]/, '')
+  accumulator << url if url.include?('ark:')
 end
 
-# ==================
-# Top level document
-#
-# NOTE: All fields should be stored in Solr
-# ==================
+to_field 'ark_ssi' do |_record, accumulator, context|
+  next unless context.output_hash['permalink_ssi']
 
-to_field 'id', extract_xpath('/ead/eadheader/eadid'), strip, gsub('.', '-')
-to_field 'title_filing_ssi', extract_xpath('/ead/eadheader/filedesc/titlestmt/titleproper[@type="filing"]')
-to_field 'title_ssm', extract_xpath('/ead/archdesc/did/unittitle')
-to_field 'title_tesim', extract_xpath('/ead/archdesc/did/unittitle')
-to_field 'ead_ssi', extract_xpath('/ead/eadheader/eadid')
-
-to_field 'unitdate_ssm', extract_xpath('/ead/archdesc/did/unitdate')
-to_field 'unitdate_bulk_ssim', extract_xpath('/ead/archdesc/did/unitdate[@type="bulk"]')
-to_field 'unitdate_inclusive_ssm', extract_xpath('/ead/archdesc/did/unitdate[@type="inclusive"]')
-to_field 'unitdate_other_ssim', extract_xpath('/ead/archdesc/did/unitdate[not(@type)]')
-
-# All top-level docs treated as 'collection' for routing / display purposes
-to_field 'level_ssm' do |_record, accumulator|
-  accumulator << 'collection'
+  permalink = context.output_hash['permalink_ssi'].first
+  path = URI(permalink).path&.delete_prefix!('/')
+  accumulator << path
 end
 
-# Keep the original top-level archdesc/@level for Level facet in addition to 'Collection'
-to_field 'level_ssim' do |record, accumulator|
-  level = record.at_xpath('/ead/archdesc').attribute('level')&.value
-  other_level = record.at_xpath('/ead/archdesc').attribute('otherlevel')&.value
+# Aleph ID (esp. for request integration)
+to_field 'bibnum_ssim', extract_xpath('/ead/eadheader/filedesc/notestmt/note/p/num[@type="aleph"]')
 
-  accumulator << Arclight::LevelLabel.new(level, other_level).to_s
-  accumulator << 'Collection' unless level == 'collection'
-end
-
-to_field 'unitid_ssm', extract_xpath('/ead/archdesc/did/unitid')
-to_field 'unitid_tesim', extract_xpath('/ead/archdesc/did/unitid')
-
-to_field 'normalized_date_ssm' do |_record, accumulator, context|
-  accumulator << settings['date_normalizer'].constantize.new(
-    context.output_hash['unitdate_inclusive_ssm'],
-    context.output_hash['unitdate_bulk_ssim'],
-    context.output_hash['unitdate_other_ssim']
-  ).to_s
-end
-
-to_field 'normalized_title_ssm' do |_record, accumulator, context|
-  title = context.output_hash['title_ssm']&.first
-  date = context.output_hash['normalized_date_ssm']&.first
-  accumulator << settings['title_normalizer'].constantize.new(title, date).to_s
-end
-
-to_field 'collection_title_tesim' do |_record, accumulator, context|
-  accumulator.concat context.output_hash.fetch('normalized_title_ssm', [])
-end
-
-to_field 'collection_ssim' do |_record, accumulator, context|
-  accumulator.concat context.output_hash.fetch('normalized_title_ssm', [])
-end
-
-to_field 'repository_ssm' do |_record, accumulator, context|
-  accumulator << context.clipboard[:repository]
-end
-
-to_field 'repository_ssim' do |_record, accumulator, context|
-  accumulator << context.clipboard[:repository]
-end
-
-to_field 'geogname_ssm', extract_xpath('/ead/archdesc/controlaccess/geogname')
-to_field 'geogname_ssim', extract_xpath('/ead/archdesc/controlaccess/geogname')
-
-to_field 'creator_ssm', extract_xpath('/ead/archdesc/did/origination')
-to_field 'creator_ssim', extract_xpath('/ead/archdesc/did/origination')
-to_field 'creator_sort' do |record, accumulator|
-  accumulator << record.xpath('/ead/archdesc/did/origination').map { |c| c.text.strip }.join(', ')
-end
-
-to_field 'creator_persname_ssim', extract_xpath('/ead/archdesc/did/origination/persname')
-to_field 'creator_corpname_ssim', extract_xpath('/ead/archdesc/did/origination/corpname')
-to_field 'creator_famname_ssim', extract_xpath('/ead/archdesc/did/origination/famname')
-
-to_field 'creators_ssim' do |_record, accumulator, context|
-  accumulator.concat context.output_hash['creator_persname_ssim'] if context.output_hash['creator_persname_ssim']
-  accumulator.concat context.output_hash['creator_corpname_ssim'] if context.output_hash['creator_corpname_ssim']
-  accumulator.concat context.output_hash['creator_famname_ssim'] if context.output_hash['creator_famname_ssim']
-end
-
-to_field 'places_ssim', extract_xpath('/ead/archdesc/controlaccess/geogname')
-
-to_field 'access_terms_ssm', extract_xpath('/ead/archdesc/userestrict/*[local-name()!="head"]')
-
-to_field 'acqinfo_ssim', extract_xpath('/ead/archdesc/acqinfo/*[local-name()!="head"]')
-to_field 'acqinfo_ssim', extract_xpath('/ead/archdesc/descgrp/acqinfo/*[local-name()!="head"]')
-
-to_field 'access_subjects_ssim', extract_xpath('/ead/archdesc/controlaccess', to_text: false) do |_record, accumulator|
+# DUL CUSTOMIZATION: Remove genreform (Format) from being grouped in with Subject.
+# We make a separate facet for Format.
+# As of arclight 1.1.0, genreform is already indexed as genreform_ssim but only at collection level.
+# ArcLight core also captures access_subjects_ssm but that appears to be unused.
+to_field 'access_subjects_ssim',
+         extract_xpath('/ead/archdesc/controlaccess', to_text: false) do |_record, accumulator, context|
+  context.output_hash['access_subjects_ssim'] = nil
   accumulator.map! do |element|
-    # SENYLRC/DUL CUSTOMIZATION: pull out genreform into its own field
     %w[subject function occupation].map do |selector|
       element.xpath(".//#{selector}").map(&:text)
     end
   end.flatten!
 end
 
-to_field 'access_subjects_ssim', extract_xpath('/ead/archdesc/controlaccess', to_text: false) do |_record, accumulator|
-  accumulator.map! do |element|
-    %w[subject function occupation genreform].map do |selector|
-      element.xpath(".//#{selector}").map(&:text)
-    end
-  end.flatten!
-end
-
-to_field 'access_subjects_ssm' do |_record, accumulator, context|
-  accumulator.concat Array.wrap(context.output_hash['access_subjects_ssim'])
-end
-
-# SENYLRC/DUL CUSTOMIZATION: capture formats (genreform) field separately from subjects
-to_field 'formats_ssim', extract_xpath('/ead/archdesc/controlaccess/genreform')
-to_field 'formats_ssm' do |_record, accumulator, context|
-  accumulator.concat Array.wrap(context.output_hash['formats_ssim'])
-end
-
-# SENYLRC/DUL CUSTOMIZATION: Bugfix field geogname --> places
-  to_field 'places_sim', extract_xpath('./controlaccess/geogname')
-  to_field 'places_ssm', extract_xpath('./controlaccess/geogname')
-  to_field 'places_ssim', extract_xpath('./controlaccess/geogname')
-
-  to_field 'access_subjects_ssim', extract_xpath('./controlaccess', to_text: false) do |_record, accumulator|
-    accumulator.map! do |element|
-      # DUL CUSTOMIZATION: pull out genreform into its own field
-      %w[subject function occupation].map do |selector|
-        element.xpath(".//#{selector}").map(&:text)
-      end
-    end.flatten!
+# DUL CUSTOMIZATION: UA Record Group Labels (top-level only)
+# This field is used to create hierarchical facets via the blacklight-hiearchy gem.
+# That gem does not accommodate configuring a label for the facet links that
+# differs from the actual value, so we are indexing the (nested) labels here rather
+# than e.g., 03:55.
+to_field 'ua_record_group_ssim' do |_record, accumulator, context|
+  id = context.output_hash['unitid_ssm']&.first&.split('.')
+  if id[0] == 'UA'
+    group = id[1]
+    subgroup = id[2]
+    accumulator << DulArclight::UaRecordGroup.new(group:).label
+    accumulator << DulArclight::UaRecordGroup.new(group:, subgroup:).label
   end
+end
 
+# DUL CUSTOMIZATION: preserve formatting tags in normalized titles
+to_field 'normalized_title_html_ssm' do |_record, accumulator, context|
+  title = context.output_hash['title_html_ssm']&.first&.to_s
+  dates = context.output_hash['normalized_date_ssm']&.first
+  accumulator << Arclight::NormalizedTitle.new(title, dates).to_s
+end
 
-to_field 'has_online_content_ssim', extract_xpath('.//dao') do |_record, accumulator|
+# DUL CUSTOMIZATION: use DUL rules for Digital Objects (esp. see role & xpointer)
+to_field 'digital_objects_ssm',
+         extract_xpath('/ead/archdesc/did/dao|/ead/archdesc/dao', to_text: false) do |_record, accumulator, context|
+  # clear out the digital_objects_ssm data captured from core config
+  context.output_hash['digital_objects_ssm'] = nil
+  accumulator.map! do |dao|
+    label = dao.attributes['title']&.value ||
+            dao.attributes['xlink:title']&.value ||
+            dao.xpath('daodesc/p')&.text
+    href = (dao.attributes['href'] || dao.attributes['xlink:href'])&.value
+    role = (dao.attributes['role'] || dao.attributes['xlink:role'])&.value
+    xpointer = (dao.attributes['xpointer'] || dao.attributes['xlink:xpointer'])&.value
+    DulArclight::DigitalObject.new(label:, href:, role:, xpointer:).to_json
+  end
+end
+
+# DUL CUSTOMIZATION: omit DAO @role electronic-record-* from counting as online content
+# as they are not really online and thus shouldn't get the icon/facet value.
+to_field 'has_online_content_ssim',
+         extract_xpath('.//dao[not(starts-with(@role,"electronic-record"))]') do |_record, accumulator, context|
+  context.output_hash['has_online_content_ssim'] = nil
   accumulator.replace([accumulator.any?])
 end
 
-to_field 'digital_objects_ssm', extract_xpath('/ead/archdesc/did/dao|/ead/archdesc/dao', to_text: false) do |_record, accumulator|
-  accumulator.map! do |dao|
-    label = dao.attributes['title']&.value ||
-            dao.xpath('daodesc/p')&.text
-    href = (dao.attributes['href'] || dao.attributes['xlink:href'])&.value
-    Arclight::DigitalObject.new(label: label, href: href).to_json
-  end
+# DUL CUSTOMIZATION: count all online access DAOs from this level down; omit the
+# electronic-record ones as they are not really online access.
+to_field 'online_item_count_is' do |record, accumulator, context|
+  context.output_hash['online_item_count_is'] = nil
+  accumulator << record.xpath('.//dao[not(starts-with(@role,"electronic-record"))]').count
 end
 
-# This accumulates direct text from a physdesc, ignoring child elements handled elsewhere
-to_field 'physdesc_tesim', extract_xpath('/ead/archdesc/did/physdesc', to_text: false) do |_record, accumulator|
-  accumulator.map! do |element|
-    physdesc = []
-    element.children.map do |child|
-      next if child.instance_of?(Nokogiri::XML::Element)
-
-      physdesc << child.text&.strip unless child.text&.strip&.empty?
-    end.flatten
-    physdesc.join(' ') unless physdesc.empty?
-  end
-end
-
-to_field 'extent_ssm' do |record, accumulator|
+# DUL CUSTOMIZATION: wrap carrier extents in parentheses per DACS:
+# https://saa-ts-dacs.github.io/dacs/06_part_I/03_chapter_02/05_extent.html#multiple-statements-of-extent
+to_field 'extent_ssm' do |record, accumulator, context|
+  context.output_hash['extent_ssm'] = nil
   physdescs = record.xpath('/ead/archdesc/did/physdesc')
   extents_per_physdesc = physdescs.map do |physdesc|
-    extents = physdesc.xpath('./extent').map { |e| e.text.strip }
+    extents = physdesc.xpath('./extent').map do |e|
+      if e.attributes['altrender']&.value == 'carrier'
+        "(#{e.text.strip})"
+      else
+        e.text.strip
+      end
+    end
+
     # Join extents within the same physdesc with an empty string
     extents.join(' ') unless extents.empty?
   end
@@ -240,97 +142,45 @@ to_field 'extent_ssm' do |record, accumulator|
 end
 
 to_field 'extent_tesim' do |_record, accumulator, context|
+  context.output_hash['extent_tesim'] = nil
   accumulator.concat context.output_hash['extent_ssm'] || []
 end
 
-to_field 'physfacet_tesim', extract_xpath('/ead/archdesc/did/physdesc/physfacet')
-to_field 'dimensions_tesim', extract_xpath('/ead/archdesc/did/physdesc/dimensions')
-
-to_field 'genreform_ssim', extract_xpath('/ead/archdesc/controlaccess/genreform')
-
-to_field 'date_range_isim', extract_xpath('/ead/archdesc/did/unitdate/@normal', to_text: false) do |_record, accumulator|
-  range = Arclight::YearRange.new
-  next range.years if accumulator.blank?
-
-  ranges = accumulator.map(&:to_s)
-  range << range.parse_ranges(ranges)
-  accumulator.replace range.years
+# DUL CUSTOMIZATION: add high component position to collection so the collection record
+# appears after all components. Default was 0
+to_field 'sort_isi' do |_record, accumulator, context|
+  context.output_hash['sort_isi'] = nil
+  accumulator << 999_999
 end
 
-to_field 'indexes_html_tesm', extract_xpath('/ead/archdesc/index', to_text: false)
-to_field 'indexes_tesim', extract_xpath('/ead/archdesc/index')
-
-SEARCHABLE_NOTES_FIELDS.map do |selector|
-  to_field "#{selector}_html_tesm", extract_xpath("/ead/archdesc/#{selector}/*[local-name()!='head']", to_text: false) do |_record, accumulator|
-    accumulator.map!(&:to_html)
-  end
-  to_field "#{selector}_heading_ssm", extract_xpath("/ead/archdesc/#{selector}/head") unless selector == 'prefercite'
-  to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/#{selector}/*[local-name()!='head']")
-end
-
-DID_SEARCHABLE_NOTES_FIELDS.map do |selector|
-  to_field "#{selector}_html_tesm", extract_xpath("/ead/archdesc/did/#{selector}", to_text: false)
-end
-
+# DUL CUSTOMIZATION: exclude repository/corpname since it's always Rubenstein.
+# The first_iteration flag is a bit of a hack but when we blank out the values
+# collected via the core config, we only want to do it on the first iteration
+# else we would also be blanking out the values collected from this config.
+name_first_iteration = true
 NAME_ELEMENTS.map do |selector|
-  to_field 'names_coll_ssim', extract_xpath("/ead/archdesc/controlaccess/#{selector}")
-  to_field 'names_ssim', extract_xpath("//#{selector}"), unique
-  to_field "#{selector}_ssim", extract_xpath("//#{selector}"), unique
-end
-
-to_field 'language_ssim', extract_xpath('/ead/archdesc/did/langmaterial')
-
-to_field 'descrules_ssm', extract_xpath('/ead/eadheader/profiledesc/descrules')
-
-# count all descendant components from the top-level
-to_field 'total_component_count_is', first_only do |record, accumulator|
-  accumulator << record.xpath('//c|//c01|//c02|//c03|//c04|//c05|//c06|//c07|//c08|//c09|//c10|//c11|//c12').count
-end
-
-# count all digital objects from the top-level
-to_field 'online_item_count_is', first_only do |record, accumulator|
-  accumulator << record.xpath('//dao').count
-end
-
-to_field 'component_level_isim' do |_record, accumulator, _context|
-  accumulator << 0
-end
-
-to_field 'sort_isi' do |_record, accumulator, _context|
-  accumulator << 0
-end
-
-# =============================
-# Each component child document
-# <c> <c01> <c12>
-# =============================
-
-to_field 'components' do |record, accumulator, context|
-  child_components = record.xpath("/ead/archdesc/dsc/c|#{('/ead/archdesc/dsc/c01'..'/ead/archdesc/dsc/c12').to_a.join('|')}")
-  next unless child_components.any?
-
-  counter = Class.new do
-    def increment
-      @counter ||= 0
-      @counter += 1
-    end
-  end.new
-
-  component_indexer = Traject::Indexer::NokogiriIndexer.new.tap do |i|
-    i.settings do
-      provide :parent, context
-      provide :root, context
-      provide :counter, counter
-      provide :depth, 1
-      provide :logger, context.settings[:logger]
-      provide :component_traject_config, context.settings[:component_traject_config]
-    end
-
-    i.load_config_file(context.settings[:component_traject_config])
+  to_field 'names_ssim', extract_xpath("//#{selector}[not(parent::repository)]"),
+           unique do |_record, accumulator, context|
+    # clear out the value collected via the core config
+    context.output_hash['names_ssim'] = nil if name_first_iteration
+    accumulator.map!
   end
 
-  child_components.each do |child_component|
-    output = component_indexer.map_record(child_component)
-    accumulator << output if output.keys.any?
+  to_field "#{selector}_ssim", extract_xpath("//#{selector}[not(parent::repository)]"),
+           unique do |_record, accumulator, context|
+    # clear out the value collected via the core config
+    context.output_hash["#{selector}_coll_ssim"] = nil if name_first_iteration
+    accumulator.map!
   end
+  name_first_iteration = false
 end
+
+# DUL CUSTOMIZATION: separate language vs langmaterial fields that don't have language
+# Probably just a DUL modification; mix of conventions in use in our data
+to_field 'language_ssim', extract_xpath('/ead/archdesc/did/langmaterial/language') do |_record, accumulator, context|
+  # clear out the value collected via the core config
+  context.output_hash['language_ssim'] = nil
+  accumulator.map!
+end
+
+to_field 'langmaterial_ssim', extract_xpath('/ead/archdesc/did/langmaterial[not(descendant::language)]')
