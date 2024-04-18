@@ -4,8 +4,8 @@
 class CatalogController < ApplicationController
   include Blacklight::Catalog
   include Arclight::Catalog
-
-
+#added by SENYLRC
+ before_action :default_grouped!, only: :index
   configure_blacklight do |config|
     ## Class for sending and receiving requests from a search index
     # config.repository_class = Blacklight::Solr::Repository
@@ -438,6 +438,12 @@ config.add_background_field 'did_note_ssm', label: 'General Note', helper_method
 
     # Group header values
     config.add_group_header_field 'abstract_or_scope', accessor: true, truncate: true, helper_method: :render_html_tags
+
+#added by SENYLRC from group
+
+  def default_grouped!
+    @search_state = search_state.reset_search('group' => 'true') if params[:group].nil?
+  end
 
   end
 end
