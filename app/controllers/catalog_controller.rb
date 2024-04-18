@@ -273,6 +273,27 @@ class CatalogController < ApplicationController
     # Configuration for autocomplete suggestor
     config.autocomplete_enabled = true
     config.autocomplete_path = 'suggest'
+#SENYLRC
+  # ===========================
+    # JSON DATA FIELDS
+    # ===========================
+
+    config.add_show_field 'title_ssm', label: 'Title'
+    config.add_show_field 'normalized_title_ssm', label: 'Normalized title'
+    config.add_show_field 'normalized_date_ssm', label: 'Normalized date'
+    config.add_show_field 'unitdate_ssm', label: 'Unitdate'
+    config.add_show_field 'collection_ssm', label: 'Collection'
+    config.add_show_field 'repository_ssm', label: 'Repository'
+    config.add_show_field 'level_ssm', label: 'Level'
+    config.add_show_field 'component_level_isim', label: 'Component level'
+    config.add_show_field 'parent_ssim', label: 'Parent'
+    config.add_show_field 'parent_unittitles_ssm', label: 'Patent titles'
+    config.add_show_field 'ead_ssi', label: 'EAD ID'
+    config.add_show_field 'collection_unitid_ssm', label: 'Collection unit ID'
+    config.add_show_field 'has_online_content_ssim', label: 'Has online content?'
+    config.add_show_field 'child_component_count_isim', label: 'Child component count'
+    config.add_show_field 'title_filing_si', label: 'Filing title'
+    config.add_show_field 'otherfindaid_ssm', label: 'Other finding aids'
 
 
     # ===========================
