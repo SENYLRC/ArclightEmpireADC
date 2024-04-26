@@ -1,4 +1,7 @@
 en:
+  arclight:
+    within_collection_dropdown:
+      this_repository: this repository
   blacklight:
     search:
       fields:
