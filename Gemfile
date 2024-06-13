@@ -67,6 +67,8 @@ group :test do
 end
 gem "arclight"
 gem 'blacklight_dynamic_sitemap'
+gem 'blacklight-hierarchy'
+gem 'blacklight_range_limit', '~> 8'
 
 group :development, :test do
   gem "solr_wrapper", ">= 0.3"
@@ -77,3 +79,4 @@ gem "sassc-rails", "~> 2.1"
 gem "devise"
 gem "devise-guests", "~> 0.8"
 gem "blacklight-locale_picker"
+gem 'font-awesome-rails'
