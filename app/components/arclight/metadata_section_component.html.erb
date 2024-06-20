@@ -5,40 +5,9 @@
     </h3>
   <% end %>
 
-<!-- this is for debug-->
-<!--
-<%= tag.dl class: @classes do %>
-  <% @presenter.field_presenters.each do |field_presenter| %>
-    <p>field_presenter: <%= field_presenter.inspect %></p>
-    <p>field_presenter.field_config: <%= field_presenter.field_config.inspect %></p>
-    <% if field_presenter.field_config.key == 'otherfindaid_html_tesm' %>
-      <p>Field Value: <%= field_presenter.value %></p>
-      <%= helpers.link_to field_presenter.value, field_presenter.value, target: '_blank' %>
-    <% else %>
+  <%= tag.dl class: @classes do %>
+    <% @presenter.field_presenters.each do |field_presenter| %>
       <%= render (field_presenter.component || Blacklight::MetadataFieldComponent).new(field: field_presenter, show: true, **@metadata_attr) %>
     <% end %>
   <% end %>
-<% end %>
--->
-
-<%= tag.dl class: @classes do %>
-  <% @presenter.field_presenters.each do |field_presenter| %>
-    <% if field_presenter.field_config.key == 'otherfindaid' %>
-      <% field_presenter.values.each do |value| %>
-        <% value_str = value.to_s.strip %>
-        <% if value_str.end_with?('.pdf') %>
-          Other finding aids: <a href="<%= value_str %>" class="btn btn-primary" target="_blank" style="margin-left:20px;height:40px;width: 180px;">View PDF</a>
-        <% elsif value_str.end_with?('.xlsx') || value_str.end_with?('.xls') %>
-          Other finding aids: <a href="<%= value_str %>" class="btn btn-success" target="_blank" style="margin-left:20px;height:40px;width: 180px;">View Excel</a>
-        <% else %>
-          <a href="<%= value_str %>" target="_blank"><%= value_str %></a>
-        <% end %>
-      <% end %>
-    <% else %>
-      <%= render (field_presenter.component || Blacklight::MetadataFieldComponent).new(field: field_presenter, show: true, **@metadata_attr) %>
-    <% end %>
-  <% end %>
-<% end %>
-
-
 <% end %>
