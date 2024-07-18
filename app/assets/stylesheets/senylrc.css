@@ -1668,3 +1668,14 @@ margin-bottom:unset;
 .al-masthead.bg-light{
 display:none;
 }
+/*jen requested blue links*/
+a {
+  text-decoration: none;
+  color: #3a5ea4;
+}
+
+
+a:hover {
+  text-decoration: none;
+  color: #3a5ea4;
+}
