@@ -1679,3 +1679,13 @@ a:hover {
   text-decoration: none;
   color: #3a5ea4;
 }
+.wp-block-navigation .wp-block-navigation-item {
+z-index: 9999;
+}
+
+
+
+.card.online-contents{
+font-weight:bold;
+font-size:20px;
+}

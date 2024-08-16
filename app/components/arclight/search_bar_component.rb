@@ -5,7 +5,9 @@ module Arclight
   # the context of the search (within "this collection" or "all collections").
   # If a collection has not been chosen, it displays a dropdown with only "all collections"
   # as the only selectable option.
-  class SearchBarComponent < Blacklight::SearchBarComponent
+
+  
+class SearchBarComponent < Blacklight::SearchBarComponent
     def initialize(**kwargs)
       super
 
