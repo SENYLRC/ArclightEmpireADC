@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   mount Blacklight::Engine => '/'
-   #SENYLRC added sitemap feb 2024
-  mount BlacklightDynamicSitemap::Engine => '/'
   mount Arclight::Engine => '/'
-
+mount BlacklightDynamicSitemap::Engine => '/'
   root to: "arclight/repositories#index"
   concern :searchable, Blacklight::Routes::Searchable.new
 
@@ -29,10 +27,6 @@ Rails.application.routes.draw do
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
-
   # Defines the root path route ("/")
-  # root "posts#index"
+  # root "articles#index"
 end
