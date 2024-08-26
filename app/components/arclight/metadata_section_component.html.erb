@@ -7,7 +7,30 @@
 
   <%= tag.dl class: @classes do %>
     <% @presenter.field_presenters.each do |field_presenter| %>
-      <%= render (field_presenter.component || Blacklight::MetadataFieldComponent).new(field: field_presenter, show: true, **@metadata_attr) %>
+      <% if field_presenter.field_config.key == 'otherfindaid' %>
+<dt class="blacklight-otherfindaid col-md-3 offset-md-1">    Other finding aids:</dt>
+
+        <% field_values = field_presenter.render %> 
+        <% if field_values.is_a?(String) && field_values.end_with?('.pdf') %>
+          <dd class="col-md-8 blacklight-otherfindaid">
+            <%= link_to field_values, target: '_blank' do %>
+              <%= image_tag('pdf_icon.png', alt: 'PDF Icon', class: 'pdf-icon', style: 'height: 60px;') %>
+            <% end %>
+          </dd>
+  <% elsif field_values.end_with?('.xls', '.xlsx') %>
+            <dd class="col-md-8 blacklight-otherfindaid">
+              <%= link_to field_values, target: '_blank' do %>
+                <%= image_tag('excel_icon.png', alt: 'Excel Icon', class: 'excel-icon', style: 'height: 60px;') %>
+              <% end %>
+            </dd>
+        <% else %>
+          <dd class="col-md-8 blacklight-otherfindaid">
+            <%= field_values %>
+          </dd>
+        <% end %>
+      <% else %>
+        <%= render (field_presenter.component || Blacklight::MetadataFieldComponent).new(field: field_presenter, show: true, **@metadata_attr) %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
