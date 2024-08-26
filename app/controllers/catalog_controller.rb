@@ -14,6 +14,8 @@ class CatalogController < ApplicationController
     ## Model that maps search index responses to the blacklight response model
     # config.response_model = Blacklight::Solr::Response
 
+
+
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
       rows: 10,
@@ -43,7 +45,7 @@ class CatalogController < ApplicationController
      'collection.q': '{!terms f=id v=$row._root_}',
      'collection.defType': 'lucene',
      'collection.fl': '*',
-     'collection.rows': 1
+     'collection.rows': 1,
     }
 
     config.header_component = Arclight::HeaderComponent
@@ -464,4 +466,5 @@ config.add_background_field 'did_note_ssm', label: 'General Note', helper_method
 
 
   end
+
 end
