@@ -17,8 +17,6 @@
 #        Require all granted
 #    </Directory>
 
-
-
 sample_unitid:
  # pdf:
  #   href: 'http://example.com/sample.pdf'
