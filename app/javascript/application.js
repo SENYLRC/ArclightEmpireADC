@@ -32,3 +32,17 @@ document.addEventListener('DOMContentLoaded', initializeAutocompleteObserver);
 
 // Run the function on every Turbo visit
 document.addEventListener('turbo:load', initializeAutocompleteObserver);
+
+// List of target IDs to handle
+const targets = ['background', 'summary', 'related', 'indexed-terms', 'access-and-use'];
+
+targets.forEach(function(id) {
+  document.querySelector(`a[href*="#${id}"]`).addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+      window.location.hash = this.hash;
+    }
+  });
+});
