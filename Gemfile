@@ -66,6 +66,7 @@ group :test do
   gem "selenium-webdriver"
 end
 gem "arclight"
+gem 'csv'
 gem 'blacklight_dynamic_sitemap'
 gem 'blacklight-hierarchy'
 gem 'blacklight_range_limit', '~> 8'
