@@ -10,8 +10,9 @@
   </div>
   <div class="col text-right">
     <span class="al-repository-collections">
-      <%= link_to(t(:'arclight.views.repositories.view_all_collections'), repository_collections_path(@repository)) %>
-    </span>
+<button class="btn btn-primary search-btn" id="search">
+      <%= link_to(t(:'arclight.views.repositories.view_all_collections'), repository_collections_path(@repository), style: "color: white;") %>
+</button>    </span>
   </div>
 </div>
 

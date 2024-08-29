@@ -1689,3 +1689,12 @@ z-index: 9999;
 font-weight:bold;
 font-size:20px;
 }
+
+
+.blacklight-repositories-show .al-repository-collections::after{
+display:none;
+}
+
+.row.al-repository-show-header{
+padding-bottom:1%;
+}
