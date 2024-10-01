@@ -8,26 +8,37 @@
   <%= tag.dl class: @classes do %>
     <% @presenter.field_presenters.each do |field_presenter| %>
       <% if field_presenter.field_config.key == 'otherfindaid' %>
-<dt class="blacklight-otherfindaid col-md-3 offset-md-1">    Other finding aids:</dt>
+        <dt class="blacklight-otherfindaid col-md-3 offset-md-1">Other finding aids:</dt>
 
-        <% field_values = field_presenter.render %> 
-        <% if field_values.is_a?(String) && field_values.end_with?('.pdf') %>
-          <dd class="col-md-8 blacklight-otherfindaid">
-            <%= link_to field_values, target: '_blank' do %>
-              <%= image_tag('pdf_icon.png', alt: 'PDF Icon', class: 'pdf-icon', style: 'height: 60px;') %>
-            <% end %>
-          </dd>
-  <% elsif field_values.end_with?('.xls', '.xlsx') %>
-            <dd class="col-md-8 blacklight-otherfindaid">
-              <%= link_to field_values, target: '_blank' do %>
-                <%= image_tag('excel_icon.png', alt: 'Excel Icon', class: 'excel-icon', style: 'height: 60px;') %>
-              <% end %>
-            </dd>
-        <% else %>
-          <dd class="col-md-8 blacklight-otherfindaid">
-            <%= field_values %>
-          </dd>
-        <% end %>
+        <% field_values = field_presenter.render %>
+        <% require 'action_view' %>
+        <% cleaned_field_values = strip_tags(field_values).strip %> <!-- Stripping HTML tags -->
+
+<% if cleaned_field_values.is_a?(String) && cleaned_field_values =~ /https:\/\/archipelago\.senylrc\.org/i %>
+  <% cleaned_field_values = cleaned_field_values.match(/https:\/\/archipelago\.senylrc\.org.*/i)[0] %>
+  <% if cleaned_field_values =~ /\.pdf$/i %>
+    <dd class="col-md-8 blacklight-otherfindaid">
+      <%= link_to cleaned_field_values, target: '_blank' do %> <!-- Correctly linking to the cleaned URL -->
+        <%= image_tag('pdf_icon.png', alt: 'PDF Icon', class: 'pdf-icon', style: 'height: 60px;') %>
+      <% end %>
+    </dd>
+  <% elsif cleaned_field_values =~ /\.xls|\.xlsx$/i %>
+    <dd class="col-md-8 blacklight-otherfindaid">
+      <%= link_to cleaned_field_values, target: '_blank' do %> <!-- Correctly linking to the cleaned URL -->
+        <%= image_tag('excel_icon.png', alt: 'Excel Icon', class: 'excel-icon', style: 'height: 60px;') %>
+      <% end %>
+    </dd>
+  <% else %>
+    <dd class="col-md-8 blacklight-otherfindaid">
+      <%= cleaned_field_values %>
+    </dd>
+  <% end %>
+<% else %>
+  <dd class="col-md-8 blacklight-otherfindaid">
+    <%= cleaned_field_values %>
+  </dd>
+<% end %>
+
       <% else %>
         <%= render (field_presenter.component || Blacklight::MetadataFieldComponent).new(field: field_presenter, show: true, **@metadata_attr) %>
       <% end %>
