@@ -1,1 +1,35 @@
-# See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+
+#=========================================================#
+# Block all web crawlers from accessing the site
+#=========================================================#
+User-agent: *
+Disallow: /
+
+# Applebot needs to be specifically told to stop; otherwise, it follows Googlebot
+User-agent: Applebot
+Disallow: /
+
+# Explicitly state that it is not for Googleâ€™s machine learning purposes
+User-agent: Google-Extended
+Disallow: /
+
+#=========================================================#
+# Only allow the following bots
+#=========================================================#
+User-agent: archive.org_bot
+Crawl-delay: 1                       # Wait one second between requests
+
+User-agent: bingbot
+Crawl-delay: 1 
+
+User-agent: DuckDuckBot
+Crawl-delay: 1
+
+User-agent: Googlebot
+Crawl-delay: 1                       # Wait one second between requests
+
+User-agent: UptimeRobot
+Crawl-delay: 1                       # Wait one second between requests
+
+User-agent: Yahoo
+Crawl-delay: 1

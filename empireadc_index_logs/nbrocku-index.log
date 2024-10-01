@@ -1,0 +1,931 @@
+/home/deploy/scripts/harvest/archipelago/daily_harvest.sh: line 47: parallel: command not found
+Loading /home/deploy/eads/nbrocku/nbrocku_5489.xml into index...
+I, [2024-09-10T10:53:30.302370 #1161951]  INFO -- : traject (3.8.2) executing with: `-u http://127.0.0.1:8983/solr/blacklight-core/ -i xml -c /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_config.rb /home/deploy/eads/nbrocku/nbrocku_5489.xml`
+I, [2024-09-10T10:53:30.302794 #1161951]  INFO -- : Reading from /home/deploy/eads/nbrocku/nbrocku_5489.xml
+D, [2024-09-10T10:53:30.303075 #1161951] DEBUG -- : beginning Traject::Indexer#process with settings: {"solr.url"=>"http://127.0.0.1:8983/solr/blacklight-core/", "component_traject_config"=>"/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_component_config.rb", "id_normalizer"=>"Arclight::NormalizedId", "date_normalizer"=>"Arclight::NormalizedDate", "title_normalizer"=>"Arclight::NormalizedTitle", "reader_class_name"=>"Arclight::Traject::NokogiriNamespacelessReader", "solr_writer.commit_on_close"=>"true", "repository"=>"nbrocku", "logger"=>#<Logger:0x0000ecc2e7849f08 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000ecc2e7849c10 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x0000ecc2e7ec58c8 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @binmode=false, @reraise_write_errors=[], @mon_data=#<Monitor:0x0000ecc2e7849850>, @mon_data_owner_object_id=4300>, @level_override={}>, "command_line.filename"=>"/home/deploy/eads/nbrocku/nbrocku_5489.xml", "writer_class_name"=>"Traject::SolrJsonWriter", "solr_writer.batch_size"=>100, "solr_writer.thread_pool"=>1, "processing_thread_pool"=>1, "log.batch_size.severity"=>"info", "allow_nil_values"=>false, "allow_duplicate_values"=>true, "allow_empty_fields"=>false}
+I, [2024-09-10T10:53:30.342683 #1161951]  INFO -- :    Traject::SolrJsonWriter writing to 'http://127.0.0.1:8983/solr/blacklight-core/update/json' in batches of 100 with 1 bg threads
+I, [2024-09-10T10:53:30.342769 #1161951]  INFO -- :    Traject::Indexer with 1 processing threads, reader: Arclight::Traject::NokogiriNamespacelessReader and writer: Traject::SolrJsonWriter
+D, [2024-09-10T10:53:30.343815 #1161951] DEBUG -- : Shutting down #processing mapper threadpool...
+D, [2024-09-10T10:53:30.484133 #1161951] DEBUG -- : #processing mapper threadpool shutdown complete.
+D, [2024-09-10T10:53:30.484395 #1161951] DEBUG -- : Traject::SolrJsonWriter: Shutting down thread pool, waiting if needed...
+D, [2024-09-10T10:53:30.484516 #1161951] DEBUG -- : Traject::SolrJsonWriter: sending batch of 1 to Solr
+D, [2024-09-10T10:53:30.503782 #1161951] DEBUG -- : Traject::SolrJsonWriter: Thread pool shutdown complete
+I, [2024-09-10T10:53:30.503857 #1161951]  INFO -- : Traject::SolrJsonWriter sending commit to solr at url http://127.0.0.1:8983/solr/blacklight-core/update/json...
+F, [2024-09-10T10:54:30.506343 #1161951] FATAL -- : Traject::CommandLine: Unexpected exception, terminating execution:     Exception: HTTPClient::ReceiveTimeoutError: execution expired
+    /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets'
+
+bundler: failed to load command: traject (/home/deploy/.asdf/installs/ruby/3.3.3/bin/traject)
+/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets': execution expired (HTTPClient::ReceiveTimeoutError)
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `block in parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:186:in `block in timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:193:in `timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:801:in `parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:784:in `read_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:561:in `get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1299:in `do_get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1245:in `do_get_block'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1019:in `block in do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1133:in `protect_keep_alive_disconnected'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1014:in `do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:856:in `request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:743:in `get'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:370:in `commit'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:339:in `close'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:638:in `complete'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:607:in `process'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/command_line.rb:73:in `execute'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/bin/traject:14:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `kernel_load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:23:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:455:in `exec'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/command.rb:28:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:35:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/base.rb:584:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:29:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:28:in `block in <top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:20:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `<main>'
+Indexed /home/deploy/eads/nbrocku/nbrocku_5489.xml (in 62.138 secs).
+Loading /home/deploy/eads/nbrocku/nbrocku_5469.xml into index...
+I, [2024-09-10T11:08:04.912926 #1173091]  INFO -- : traject (3.8.2) executing with: `-u http://127.0.0.1:8983/solr/blacklight-core/ -i xml -c /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_config.rb /home/deploy/eads/nbrocku/nbrocku_5469.xml`
+I, [2024-09-10T11:08:04.913344 #1173091]  INFO -- : Reading from /home/deploy/eads/nbrocku/nbrocku_5469.xml
+D, [2024-09-10T11:08:04.913625 #1173091] DEBUG -- : beginning Traject::Indexer#process with settings: {"solr.url"=>"http://127.0.0.1:8983/solr/blacklight-core/", "component_traject_config"=>"/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_component_config.rb", "id_normalizer"=>"Arclight::NormalizedId", "date_normalizer"=>"Arclight::NormalizedDate", "title_normalizer"=>"Arclight::NormalizedTitle", "reader_class_name"=>"Arclight::Traject::NokogiriNamespacelessReader", "solr_writer.commit_on_close"=>"true", "repository"=>"nbrocku", "logger"=>#<Logger:0x0000e38b4311a528 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000e38b4311a028 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x0000e38b43787230 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @binmode=false, @reraise_write_errors=[], @mon_data=#<Monitor:0x0000e38b43119880>, @mon_data_owner_object_id=4300>, @level_override={}>, "command_line.filename"=>"/home/deploy/eads/nbrocku/nbrocku_5469.xml", "writer_class_name"=>"Traject::SolrJsonWriter", "solr_writer.batch_size"=>100, "solr_writer.thread_pool"=>1, "processing_thread_pool"=>1, "log.batch_size.severity"=>"info", "allow_nil_values"=>false, "allow_duplicate_values"=>true, "allow_empty_fields"=>false}
+I, [2024-09-10T11:08:04.952265 #1173091]  INFO -- :    Traject::SolrJsonWriter writing to 'http://127.0.0.1:8983/solr/blacklight-core/update/json' in batches of 100 with 1 bg threads
+I, [2024-09-10T11:08:04.952334 #1173091]  INFO -- :    Traject::Indexer with 1 processing threads, reader: Arclight::Traject::NokogiriNamespacelessReader and writer: Traject::SolrJsonWriter
+D, [2024-09-10T11:08:04.954117 #1173091] DEBUG -- : Shutting down #processing mapper threadpool...
+D, [2024-09-10T11:08:05.662517 #1173091] DEBUG -- : #processing mapper threadpool shutdown complete.
+D, [2024-09-10T11:08:05.662866 #1173091] DEBUG -- : Traject::SolrJsonWriter: Shutting down thread pool, waiting if needed...
+D, [2024-09-10T11:08:05.662956 #1173091] DEBUG -- : Traject::SolrJsonWriter: sending batch of 1 to Solr
+D, [2024-09-10T11:08:05.717961 #1173091] DEBUG -- : Traject::SolrJsonWriter: Thread pool shutdown complete
+I, [2024-09-10T11:08:05.718042 #1173091]  INFO -- : Traject::SolrJsonWriter sending commit to solr at url http://127.0.0.1:8983/solr/blacklight-core/update/json...
+F, [2024-09-10T11:09:05.719115 #1173091] FATAL -- : Traject::CommandLine: Unexpected exception, terminating execution:     Exception: HTTPClient::ReceiveTimeoutError: execution expired
+    /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets'
+
+bundler: failed to load command: traject (/home/deploy/.asdf/installs/ruby/3.3.3/bin/traject)
+/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets': execution expired (HTTPClient::ReceiveTimeoutError)
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `block in parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:186:in `block in timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:193:in `timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:801:in `parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:784:in `read_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:561:in `get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1299:in `do_get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1245:in `do_get_block'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1019:in `block in do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1133:in `protect_keep_alive_disconnected'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1014:in `do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:856:in `request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:743:in `get'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:370:in `commit'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:339:in `close'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:638:in `complete'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:607:in `process'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/command_line.rb:73:in `execute'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/bin/traject:14:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `kernel_load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:23:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:455:in `exec'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/command.rb:28:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:35:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/base.rb:584:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:29:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:28:in `block in <top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:20:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `<main>'
+Indexed /home/deploy/eads/nbrocku/nbrocku_5469.xml (in 62.789 secs).
+Loading /home/deploy/eads/nbrocku/nbrocku_5478.xml into index...
+I, [2024-09-10T11:16:41.659588 #1179277]  INFO -- : traject (3.8.2) executing with: `-u http://127.0.0.1:8983/solr/blacklight-core/ -i xml -c /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_config.rb /home/deploy/eads/nbrocku/nbrocku_5478.xml`
+I, [2024-09-10T11:16:41.659983 #1179277]  INFO -- : Reading from /home/deploy/eads/nbrocku/nbrocku_5478.xml
+D, [2024-09-10T11:16:41.660272 #1179277] DEBUG -- : beginning Traject::Indexer#process with settings: {"solr.url"=>"http://127.0.0.1:8983/solr/blacklight-core/", "component_traject_config"=>"/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_component_config.rb", "id_normalizer"=>"Arclight::NormalizedId", "date_normalizer"=>"Arclight::NormalizedDate", "title_normalizer"=>"Arclight::NormalizedTitle", "reader_class_name"=>"Arclight::Traject::NokogiriNamespacelessReader", "solr_writer.commit_on_close"=>"true", "repository"=>"nbrocku", "logger"=>#<Logger:0x0000ff70caaa6af0 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000ff70caaa6870 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x0000ff70cb147a30 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @binmode=false, @reraise_write_errors=[], @mon_data=#<Monitor:0x0000ff70caaa6618>, @mon_data_owner_object_id=4300>, @level_override={}>, "command_line.filename"=>"/home/deploy/eads/nbrocku/nbrocku_5478.xml", "writer_class_name"=>"Traject::SolrJsonWriter", "solr_writer.batch_size"=>100, "solr_writer.thread_pool"=>1, "processing_thread_pool"=>1, "log.batch_size.severity"=>"info", "allow_nil_values"=>false, "allow_duplicate_values"=>true, "allow_empty_fields"=>false}
+I, [2024-09-10T11:16:41.701007 #1179277]  INFO -- :    Traject::SolrJsonWriter writing to 'http://127.0.0.1:8983/solr/blacklight-core/update/json' in batches of 100 with 1 bg threads
+I, [2024-09-10T11:16:41.701072 #1179277]  INFO -- :    Traject::Indexer with 1 processing threads, reader: Arclight::Traject::NokogiriNamespacelessReader and writer: Traject::SolrJsonWriter
+D, [2024-09-10T11:16:41.702417 #1179277] DEBUG -- : Shutting down #processing mapper threadpool...
+D, [2024-09-10T11:16:41.823916 #1179277] DEBUG -- : #processing mapper threadpool shutdown complete.
+D, [2024-09-10T11:16:41.824203 #1179277] DEBUG -- : Traject::SolrJsonWriter: Shutting down thread pool, waiting if needed...
+D, [2024-09-10T11:16:41.824285 #1179277] DEBUG -- : Traject::SolrJsonWriter: sending batch of 1 to Solr
+D, [2024-09-10T11:16:41.837973 #1179277] DEBUG -- : Traject::SolrJsonWriter: Thread pool shutdown complete
+I, [2024-09-10T11:16:41.838058 #1179277]  INFO -- : Traject::SolrJsonWriter sending commit to solr at url http://127.0.0.1:8983/solr/blacklight-core/update/json...
+F, [2024-09-10T11:17:41.840474 #1179277] FATAL -- : Traject::CommandLine: Unexpected exception, terminating execution:     Exception: HTTPClient::ReceiveTimeoutError: execution expired
+    /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets'
+
+bundler: failed to load command: traject (/home/deploy/.asdf/installs/ruby/3.3.3/bin/traject)
+/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets': execution expired (HTTPClient::ReceiveTimeoutError)
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `block in parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:186:in `block in timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:193:in `timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:801:in `parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:784:in `read_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:561:in `get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1299:in `do_get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1245:in `do_get_block'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1019:in `block in do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1133:in `protect_keep_alive_disconnected'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1014:in `do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:856:in `request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:743:in `get'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:370:in `commit'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:339:in `close'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:638:in `complete'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:607:in `process'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/command_line.rb:73:in `execute'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/bin/traject:14:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `kernel_load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:23:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:455:in `exec'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/command.rb:28:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:35:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/base.rb:584:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:29:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:28:in `block in <top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:20:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `<main>'
+Indexed /home/deploy/eads/nbrocku/nbrocku_5478.xml (in 62.134 secs).
+Loading /home/deploy/eads/nbrocku/nbrocku_5482.xml into index...
+I, [2024-09-10T11:21:04.004470 #1182342]  INFO -- : traject (3.8.2) executing with: `-u http://127.0.0.1:8983/solr/blacklight-core/ -i xml -c /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_config.rb /home/deploy/eads/nbrocku/nbrocku_5482.xml`
+I, [2024-09-10T11:21:04.005009 #1182342]  INFO -- : Reading from /home/deploy/eads/nbrocku/nbrocku_5482.xml
+D, [2024-09-10T11:21:04.005307 #1182342] DEBUG -- : beginning Traject::Indexer#process with settings: {"solr.url"=>"http://127.0.0.1:8983/solr/blacklight-core/", "component_traject_config"=>"/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_component_config.rb", "id_normalizer"=>"Arclight::NormalizedId", "date_normalizer"=>"Arclight::NormalizedDate", "title_normalizer"=>"Arclight::NormalizedTitle", "reader_class_name"=>"Arclight::Traject::NokogiriNamespacelessReader", "solr_writer.commit_on_close"=>"true", "repository"=>"nbrocku", "logger"=>#<Logger:0x0000fb36bc9bcd98 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000fb36bc9bc9d8 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x0000fb36bd097aa0 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @binmode=false, @reraise_write_errors=[], @mon_data=#<Monitor:0x0000fb36bc9bc528>, @mon_data_owner_object_id=4300>, @level_override={}>, "command_line.filename"=>"/home/deploy/eads/nbrocku/nbrocku_5482.xml", "writer_class_name"=>"Traject::SolrJsonWriter", "solr_writer.batch_size"=>100, "solr_writer.thread_pool"=>1, "processing_thread_pool"=>1, "log.batch_size.severity"=>"info", "allow_nil_values"=>false, "allow_duplicate_values"=>true, "allow_empty_fields"=>false}
+I, [2024-09-10T11:21:04.044400 #1182342]  INFO -- :    Traject::SolrJsonWriter writing to 'http://127.0.0.1:8983/solr/blacklight-core/update/json' in batches of 100 with 1 bg threads
+I, [2024-09-10T11:21:04.044470 #1182342]  INFO -- :    Traject::Indexer with 1 processing threads, reader: Arclight::Traject::NokogiriNamespacelessReader and writer: Traject::SolrJsonWriter
+D, [2024-09-10T11:21:04.049480 #1182342] DEBUG -- : Shutting down #processing mapper threadpool...
+D, [2024-09-10T11:21:08.016380 #1182342] DEBUG -- : #processing mapper threadpool shutdown complete.
+D, [2024-09-10T11:21:08.016633 #1182342] DEBUG -- : Traject::SolrJsonWriter: Shutting down thread pool, waiting if needed...
+D, [2024-09-10T11:21:08.016767 #1182342] DEBUG -- : Traject::SolrJsonWriter: sending batch of 1 to Solr
+D, [2024-09-10T11:21:08.186835 #1182342] DEBUG -- : Traject::SolrJsonWriter: Thread pool shutdown complete
+I, [2024-09-10T11:21:08.186914 #1182342]  INFO -- : Traject::SolrJsonWriter sending commit to solr at url http://127.0.0.1:8983/solr/blacklight-core/update/json...
+F, [2024-09-10T11:22:08.188017 #1182342] FATAL -- : Traject::CommandLine: Unexpected exception, terminating execution:     Exception: HTTPClient::ReceiveTimeoutError: execution expired
+    /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets'
+
+bundler: failed to load command: traject (/home/deploy/.asdf/installs/ruby/3.3.3/bin/traject)
+/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets': execution expired (HTTPClient::ReceiveTimeoutError)
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `block in parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:186:in `block in timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:193:in `timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:801:in `parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:784:in `read_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:561:in `get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1299:in `do_get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1245:in `do_get_block'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1019:in `block in do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1133:in `protect_keep_alive_disconnected'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1014:in `do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:856:in `request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:743:in `get'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:370:in `commit'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:339:in `close'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:638:in `complete'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:607:in `process'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/command_line.rb:73:in `execute'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/bin/traject:14:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `kernel_load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:23:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:455:in `exec'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/command.rb:28:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:35:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/base.rb:584:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:29:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:28:in `block in <top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:20:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `<main>'
+Indexed /home/deploy/eads/nbrocku/nbrocku_5482.xml (in 66.117 secs).
+Loading /home/deploy/eads/nbrocku/nbrocku_5489.xml into index...
+I, [2024-09-10T11:26:30.902608 #1185821]  INFO -- : traject (3.8.2) executing with: `-u http://127.0.0.1:8983/solr/blacklight-core/ -i xml -c /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_config.rb /home/deploy/eads/nbrocku/nbrocku_5489.xml`
+I, [2024-09-10T11:26:30.903049 #1185821]  INFO -- : Reading from /home/deploy/eads/nbrocku/nbrocku_5489.xml
+D, [2024-09-10T11:26:30.903313 #1185821] DEBUG -- : beginning Traject::Indexer#process with settings: {"solr.url"=>"http://127.0.0.1:8983/solr/blacklight-core/", "component_traject_config"=>"/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_component_config.rb", "id_normalizer"=>"Arclight::NormalizedId", "date_normalizer"=>"Arclight::NormalizedDate", "title_normalizer"=>"Arclight::NormalizedTitle", "reader_class_name"=>"Arclight::Traject::NokogiriNamespacelessReader", "solr_writer.commit_on_close"=>"true", "repository"=>"nbrocku", "logger"=>#<Logger:0x0000eb0810153cf0 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000eb0810153610 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x0000eb08107632a8 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @binmode=false, @reraise_write_errors=[], @mon_data=#<Monitor:0x0000eb0810153200>, @mon_data_owner_object_id=4300>, @level_override={}>, "command_line.filename"=>"/home/deploy/eads/nbrocku/nbrocku_5489.xml", "writer_class_name"=>"Traject::SolrJsonWriter", "solr_writer.batch_size"=>100, "solr_writer.thread_pool"=>1, "processing_thread_pool"=>1, "log.batch_size.severity"=>"info", "allow_nil_values"=>false, "allow_duplicate_values"=>true, "allow_empty_fields"=>false}
+I, [2024-09-10T11:26:30.941384 #1185821]  INFO -- :    Traject::SolrJsonWriter writing to 'http://127.0.0.1:8983/solr/blacklight-core/update/json' in batches of 100 with 1 bg threads
+I, [2024-09-10T11:26:30.941452 #1185821]  INFO -- :    Traject::Indexer with 1 processing threads, reader: Arclight::Traject::NokogiriNamespacelessReader and writer: Traject::SolrJsonWriter
+D, [2024-09-10T11:26:30.942522 #1185821] DEBUG -- : Shutting down #processing mapper threadpool...
+D, [2024-09-10T11:26:31.086220 #1185821] DEBUG -- : #processing mapper threadpool shutdown complete.
+D, [2024-09-10T11:26:31.086474 #1185821] DEBUG -- : Traject::SolrJsonWriter: Shutting down thread pool, waiting if needed...
+D, [2024-09-10T11:26:31.086553 #1185821] DEBUG -- : Traject::SolrJsonWriter: sending batch of 1 to Solr
+D, [2024-09-10T11:26:31.096676 #1185821] DEBUG -- : Traject::SolrJsonWriter: Thread pool shutdown complete
+I, [2024-09-10T11:26:31.096769 #1185821]  INFO -- : Traject::SolrJsonWriter sending commit to solr at url http://127.0.0.1:8983/solr/blacklight-core/update/json...
+F, [2024-09-10T11:27:31.097973 #1185821] FATAL -- : Traject::CommandLine: Unexpected exception, terminating execution:     Exception: HTTPClient::ReceiveTimeoutError: execution expired
+    /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets'
+
+bundler: failed to load command: traject (/home/deploy/.asdf/installs/ruby/3.3.3/bin/traject)
+/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets': execution expired (HTTPClient::ReceiveTimeoutError)
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `block in parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:186:in `block in timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:193:in `timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:801:in `parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:784:in `read_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:561:in `get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1299:in `do_get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1245:in `do_get_block'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1019:in `block in do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1133:in `protect_keep_alive_disconnected'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1014:in `do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:856:in `request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:743:in `get'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:370:in `commit'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:339:in `close'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:638:in `complete'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:607:in `process'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/command_line.rb:73:in `execute'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/bin/traject:14:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `kernel_load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:23:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:455:in `exec'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/command.rb:28:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:35:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/base.rb:584:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:29:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:28:in `block in <top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:20:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `<main>'
+Indexed /home/deploy/eads/nbrocku/nbrocku_5489.xml (in 62.17 secs).
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 17: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 22: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 26: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 31: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 18: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 22: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 26: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 31: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 19: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 23: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 27: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 32: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 19: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 23: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 27: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 32: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 19: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 23: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 27: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 32: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 21: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 25: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 29: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 34: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 21: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 22: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 26: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 31: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 21: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 22: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 26: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 31: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 21: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 22: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 26: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 31: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 21: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 22: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 26: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 31: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 21: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 22: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 26: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 31: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 21: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 22: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 26: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 31: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 21: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 22: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 26: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 31: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 21: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 22: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 26: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 31: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 20: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 21: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 24: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 29: bundle: command not found
+Loading /home/deploy/eads/nbrocku/nbrocku_5469.xml into index...
+I, [2024-09-25T13:11:39.718491 #1112901]  INFO -- : traject (3.8.2) executing with: `-u http://127.0.0.1:8983/solr/blacklight-core/ -i xml -c /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_config.rb /home/deploy/eads/nbrocku/nbrocku_5469.xml`
+I, [2024-09-25T13:11:39.718895 #1112901]  INFO -- : Reading from /home/deploy/eads/nbrocku/nbrocku_5469.xml
+D, [2024-09-25T13:11:39.719164 #1112901] DEBUG -- : beginning Traject::Indexer#process with settings: {"solr.url"=>"http://127.0.0.1:8983/solr/blacklight-core/", "component_traject_config"=>"/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_component_config.rb", "id_normalizer"=>"Arclight::NormalizedId", "date_normalizer"=>"Arclight::NormalizedDate", "title_normalizer"=>"Arclight::NormalizedTitle", "reader_class_name"=>"Arclight::Traject::NokogiriNamespacelessReader", "solr_writer.commit_on_close"=>"true", "repository"=>"nbrocku", "logger"=>#<Logger:0x0000e132a79e7d00 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000e132a79e74e0 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x0000e132a7ff9928 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @binmode=false, @reraise_write_errors=[], @mon_data=#<Monitor:0x0000e132a79e7030>, @mon_data_owner_object_id=4300>, @level_override={}>, "command_line.filename"=>"/home/deploy/eads/nbrocku/nbrocku_5469.xml", "writer_class_name"=>"Traject::SolrJsonWriter", "solr_writer.batch_size"=>100, "solr_writer.thread_pool"=>1, "processing_thread_pool"=>1, "log.batch_size.severity"=>"info", "allow_nil_values"=>false, "allow_duplicate_values"=>true, "allow_empty_fields"=>false}
+I, [2024-09-25T13:11:39.758033 #1112901]  INFO -- :    Traject::SolrJsonWriter writing to 'http://127.0.0.1:8983/solr/blacklight-core/update/json' in batches of 100 with 1 bg threads
+I, [2024-09-25T13:11:39.758108 #1112901]  INFO -- :    Traject::Indexer with 1 processing threads, reader: Arclight::Traject::NokogiriNamespacelessReader and writer: Traject::SolrJsonWriter
+D, [2024-09-25T13:11:39.759839 #1112901] DEBUG -- : Shutting down #processing mapper threadpool...
+D, [2024-09-25T13:11:40.543232 #1112901] DEBUG -- : #processing mapper threadpool shutdown complete.
+D, [2024-09-25T13:11:40.543533 #1112901] DEBUG -- : Traject::SolrJsonWriter: Shutting down thread pool, waiting if needed...
+D, [2024-09-25T13:11:40.543617 #1112901] DEBUG -- : Traject::SolrJsonWriter: sending batch of 1 to Solr
+D, [2024-09-25T13:11:40.631028 #1112901] DEBUG -- : Traject::SolrJsonWriter: Thread pool shutdown complete
+I, [2024-09-25T13:11:40.631108 #1112901]  INFO -- : Traject::SolrJsonWriter sending commit to solr at url http://127.0.0.1:8983/solr/blacklight-core/update/json...
+F, [2024-09-25T13:12:40.633469 #1112901] FATAL -- : Traject::CommandLine: Unexpected exception, terminating execution:     Exception: HTTPClient::ReceiveTimeoutError: execution expired
+    /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets'
+
+bundler: failed to load command: traject (/home/deploy/.asdf/installs/ruby/3.3.3/bin/traject)
+/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets': execution expired (HTTPClient::ReceiveTimeoutError)
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `block in parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:186:in `block in timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:193:in `timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:801:in `parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:784:in `read_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:561:in `get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1299:in `do_get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1245:in `do_get_block'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1019:in `block in do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1133:in `protect_keep_alive_disconnected'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1014:in `do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:856:in `request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:743:in `get'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:370:in `commit'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:339:in `close'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:638:in `complete'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:607:in `process'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/command_line.rb:73:in `execute'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/bin/traject:14:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `kernel_load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:23:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:455:in `exec'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/command.rb:28:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:35:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/base.rb:584:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:29:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:28:in `block in <top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:20:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `<main>'
+Indexed /home/deploy/eads/nbrocku/nbrocku_5469.xml (in 62.816 secs).
+Loading /home/deploy/eads/nbrocku/nbrocku_5482.xml into index...
+I, [2024-09-25T13:12:44.975703 #1113077]  INFO -- : traject (3.8.2) executing with: `-u http://127.0.0.1:8983/solr/blacklight-core/ -i xml -c /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_config.rb /home/deploy/eads/nbrocku/nbrocku_5482.xml`
+I, [2024-09-25T13:12:44.976120 #1113077]  INFO -- : Reading from /home/deploy/eads/nbrocku/nbrocku_5482.xml
+D, [2024-09-25T13:12:44.976405 #1113077] DEBUG -- : beginning Traject::Indexer#process with settings: {"solr.url"=>"http://127.0.0.1:8983/solr/blacklight-core/", "component_traject_config"=>"/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_component_config.rb", "id_normalizer"=>"Arclight::NormalizedId", "date_normalizer"=>"Arclight::NormalizedDate", "title_normalizer"=>"Arclight::NormalizedTitle", "reader_class_name"=>"Arclight::Traject::NokogiriNamespacelessReader", "solr_writer.commit_on_close"=>"true", "repository"=>"nbrocku", "logger"=>#<Logger:0x0000f11f7e158210 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000f11f7e157e78 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x0000f11f7e7c4158 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @binmode=false, @reraise_write_errors=[], @mon_data=#<Monitor:0x0000f11f7e157a90>, @mon_data_owner_object_id=4300>, @level_override={}>, "command_line.filename"=>"/home/deploy/eads/nbrocku/nbrocku_5482.xml", "writer_class_name"=>"Traject::SolrJsonWriter", "solr_writer.batch_size"=>100, "solr_writer.thread_pool"=>1, "processing_thread_pool"=>1, "log.batch_size.severity"=>"info", "allow_nil_values"=>false, "allow_duplicate_values"=>true, "allow_empty_fields"=>false}
+I, [2024-09-25T13:12:45.015786 #1113077]  INFO -- :    Traject::SolrJsonWriter writing to 'http://127.0.0.1:8983/solr/blacklight-core/update/json' in batches of 100 with 1 bg threads
+I, [2024-09-25T13:12:45.015863 #1113077]  INFO -- :    Traject::Indexer with 1 processing threads, reader: Arclight::Traject::NokogiriNamespacelessReader and writer: Traject::SolrJsonWriter
+D, [2024-09-25T13:12:45.021293 #1113077] DEBUG -- : Shutting down #processing mapper threadpool...
+D, [2024-09-25T13:12:49.050757 #1113077] DEBUG -- : #processing mapper threadpool shutdown complete.
+D, [2024-09-25T13:12:49.051027 #1113077] DEBUG -- : Traject::SolrJsonWriter: Shutting down thread pool, waiting if needed...
+D, [2024-09-25T13:12:49.051117 #1113077] DEBUG -- : Traject::SolrJsonWriter: sending batch of 1 to Solr
+D, [2024-09-25T13:12:49.248195 #1113077] DEBUG -- : Traject::SolrJsonWriter: Thread pool shutdown complete
+I, [2024-09-25T13:12:49.248271 #1113077]  INFO -- : Traject::SolrJsonWriter sending commit to solr at url http://127.0.0.1:8983/solr/blacklight-core/update/json...
+F, [2024-09-25T13:13:49.249849 #1113077] FATAL -- : Traject::CommandLine: Unexpected exception, terminating execution:     Exception: HTTPClient::ReceiveTimeoutError: execution expired
+    /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets'
+
+bundler: failed to load command: traject (/home/deploy/.asdf/installs/ruby/3.3.3/bin/traject)
+/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets': execution expired (HTTPClient::ReceiveTimeoutError)
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `block in parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:186:in `block in timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:193:in `timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:801:in `parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:784:in `read_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:561:in `get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1299:in `do_get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1245:in `do_get_block'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1019:in `block in do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1133:in `protect_keep_alive_disconnected'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1014:in `do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:856:in `request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:743:in `get'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:370:in `commit'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:339:in `close'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:638:in `complete'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:607:in `process'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/command_line.rb:73:in `execute'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/bin/traject:14:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `kernel_load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:23:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:455:in `exec'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/command.rb:28:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:35:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/base.rb:584:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:29:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:28:in `block in <top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:20:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `<main>'
+Indexed /home/deploy/eads/nbrocku/nbrocku_5482.xml (in 66.162 secs).
+Loading /home/deploy/eads/nbrocku/nbrocku_5469.xml into index...
+I, [2024-09-25T13:24:23.448912 #1113926]  INFO -- : traject (3.8.2) executing with: `-u http://127.0.0.1:8983/solr/blacklight-core/ -i xml -c /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_config.rb /home/deploy/eads/nbrocku/nbrocku_5469.xml`
+I, [2024-09-25T13:24:23.449279 #1113926]  INFO -- : Reading from /home/deploy/eads/nbrocku/nbrocku_5469.xml
+D, [2024-09-25T13:24:23.449530 #1113926] DEBUG -- : beginning Traject::Indexer#process with settings: {"solr.url"=>"http://127.0.0.1:8983/solr/blacklight-core/", "component_traject_config"=>"/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_component_config.rb", "id_normalizer"=>"Arclight::NormalizedId", "date_normalizer"=>"Arclight::NormalizedDate", "title_normalizer"=>"Arclight::NormalizedTitle", "reader_class_name"=>"Arclight::Traject::NokogiriNamespacelessReader", "solr_writer.commit_on_close"=>"true", "repository"=>"nbrocku", "logger"=>#<Logger:0x0000e0ce0e493398 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000e0ce0e492a88 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x0000e0ce0eb148e8 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @binmode=false, @reraise_write_errors=[], @mon_data=#<Monitor:0x0000e0ce0e492790>, @mon_data_owner_object_id=4300>, @level_override={}>, "command_line.filename"=>"/home/deploy/eads/nbrocku/nbrocku_5469.xml", "writer_class_name"=>"Traject::SolrJsonWriter", "solr_writer.batch_size"=>100, "solr_writer.thread_pool"=>1, "processing_thread_pool"=>1, "log.batch_size.severity"=>"info", "allow_nil_values"=>false, "allow_duplicate_values"=>true, "allow_empty_fields"=>false}
+I, [2024-09-25T13:24:23.489803 #1113926]  INFO -- :    Traject::SolrJsonWriter writing to 'http://127.0.0.1:8983/solr/blacklight-core/update/json' in batches of 100 with 1 bg threads
+I, [2024-09-25T13:24:23.489923 #1113926]  INFO -- :    Traject::Indexer with 1 processing threads, reader: Arclight::Traject::NokogiriNamespacelessReader and writer: Traject::SolrJsonWriter
+D, [2024-09-25T13:24:23.491683 #1113926] DEBUG -- : Shutting down #processing mapper threadpool...
+D, [2024-09-25T13:24:24.153114 #1113926] DEBUG -- : #processing mapper threadpool shutdown complete.
+D, [2024-09-25T13:24:24.153497 #1113926] DEBUG -- : Traject::SolrJsonWriter: Shutting down thread pool, waiting if needed...
+D, [2024-09-25T13:24:24.156741 #1113926] DEBUG -- : Traject::SolrJsonWriter: sending batch of 1 to Solr
+D, [2024-09-25T13:24:24.242335 #1113926] DEBUG -- : Traject::SolrJsonWriter: Thread pool shutdown complete
+I, [2024-09-25T13:24:24.242470 #1113926]  INFO -- : Traject::SolrJsonWriter sending commit to solr at url http://127.0.0.1:8983/solr/blacklight-core/update/json...
+F, [2024-09-25T13:25:24.243723 #1113926] FATAL -- : Traject::CommandLine: Unexpected exception, terminating execution:     Exception: HTTPClient::ReceiveTimeoutError: execution expired
+    /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets'
+
+bundler: failed to load command: traject (/home/deploy/.asdf/installs/ruby/3.3.3/bin/traject)
+/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets': execution expired (HTTPClient::ReceiveTimeoutError)
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `block in parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:186:in `block in timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:193:in `timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:801:in `parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:784:in `read_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:561:in `get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1299:in `do_get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1245:in `do_get_block'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1019:in `block in do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1133:in `protect_keep_alive_disconnected'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1014:in `do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:856:in `request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:743:in `get'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:370:in `commit'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:339:in `close'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:638:in `complete'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:607:in `process'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/command_line.rb:73:in `execute'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/bin/traject:14:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `kernel_load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:23:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:455:in `exec'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/command.rb:28:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:35:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/base.rb:584:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:29:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:28:in `block in <top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:20:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `<main>'
+Indexed /home/deploy/eads/nbrocku/nbrocku_5469.xml (in 62.698 secs).
+Loading /home/deploy/eads/nbrocku/nbrocku_5482.xml into index...
+I, [2024-09-25T13:25:28.725945 #1114327]  INFO -- : traject (3.8.2) executing with: `-u http://127.0.0.1:8983/solr/blacklight-core/ -i xml -c /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_config.rb /home/deploy/eads/nbrocku/nbrocku_5482.xml`
+I, [2024-09-25T13:25:28.726322 #1114327]  INFO -- : Reading from /home/deploy/eads/nbrocku/nbrocku_5482.xml
+D, [2024-09-25T13:25:28.726601 #1114327] DEBUG -- : beginning Traject::Indexer#process with settings: {"solr.url"=>"http://127.0.0.1:8983/solr/blacklight-core/", "component_traject_config"=>"/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_component_config.rb", "id_normalizer"=>"Arclight::NormalizedId", "date_normalizer"=>"Arclight::NormalizedDate", "title_normalizer"=>"Arclight::NormalizedTitle", "reader_class_name"=>"Arclight::Traject::NokogiriNamespacelessReader", "solr_writer.commit_on_close"=>"true", "repository"=>"nbrocku", "logger"=>#<Logger:0x0000fbbc89791048 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000fbbc89790cb0 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x0000fbbc89dba0a0 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @binmode=false, @reraise_write_errors=[], @mon_data=#<Monitor:0x0000fbbc897907b0>, @mon_data_owner_object_id=4300>, @level_override={}>, "command_line.filename"=>"/home/deploy/eads/nbrocku/nbrocku_5482.xml", "writer_class_name"=>"Traject::SolrJsonWriter", "solr_writer.batch_size"=>100, "solr_writer.thread_pool"=>1, "processing_thread_pool"=>1, "log.batch_size.severity"=>"info", "allow_nil_values"=>false, "allow_duplicate_values"=>true, "allow_empty_fields"=>false}
+I, [2024-09-25T13:25:28.765820 #1114327]  INFO -- :    Traject::SolrJsonWriter writing to 'http://127.0.0.1:8983/solr/blacklight-core/update/json' in batches of 100 with 1 bg threads
+I, [2024-09-25T13:25:28.765890 #1114327]  INFO -- :    Traject::Indexer with 1 processing threads, reader: Arclight::Traject::NokogiriNamespacelessReader and writer: Traject::SolrJsonWriter
+D, [2024-09-25T13:25:28.771055 #1114327] DEBUG -- : Shutting down #processing mapper threadpool...
+D, [2024-09-25T13:25:33.869525 #1114327] DEBUG -- : #processing mapper threadpool shutdown complete.
+D, [2024-09-25T13:25:33.869843 #1114327] DEBUG -- : Traject::SolrJsonWriter: Shutting down thread pool, waiting if needed...
+D, [2024-09-25T13:25:33.869962 #1114327] DEBUG -- : Traject::SolrJsonWriter: sending batch of 1 to Solr
+D, [2024-09-25T13:25:34.018089 #1114327] DEBUG -- : Traject::SolrJsonWriter: Thread pool shutdown complete
+I, [2024-09-25T13:25:34.018174 #1114327]  INFO -- : Traject::SolrJsonWriter sending commit to solr at url http://127.0.0.1:8983/solr/blacklight-core/update/json...
+F, [2024-09-25T13:26:34.022355 #1114327] FATAL -- : Traject::CommandLine: Unexpected exception, terminating execution:     Exception: HTTPClient::ReceiveTimeoutError: execution expired
+    /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets'
+
+bundler: failed to load command: traject (/home/deploy/.asdf/installs/ruby/3.3.3/bin/traject)
+/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets': execution expired (HTTPClient::ReceiveTimeoutError)
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `block in parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:186:in `block in timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:193:in `timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:801:in `parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:784:in `read_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:561:in `get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1299:in `do_get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1245:in `do_get_block'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1019:in `block in do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1133:in `protect_keep_alive_disconnected'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1014:in `do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:856:in `request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:743:in `get'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:370:in `commit'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:339:in `close'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:638:in `complete'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:607:in `process'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/command_line.rb:73:in `execute'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/bin/traject:14:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `kernel_load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:23:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:455:in `exec'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/command.rb:28:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:35:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/base.rb:584:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:29:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:28:in `block in <top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:20:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `<main>'
+Indexed /home/deploy/eads/nbrocku/nbrocku_5482.xml (in 67.204 secs).
+Loading /home/deploy/eads/nbrocku/nbrocku_5469.xml into index...
+I, [2024-09-25T13:32:59.779628 #1115400]  INFO -- : traject (3.8.2) executing with: `-u http://127.0.0.1:8983/solr/blacklight-core/ -i xml -c /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_config.rb /home/deploy/eads/nbrocku/nbrocku_5469.xml`
+I, [2024-09-25T13:32:59.780044 #1115400]  INFO -- : Reading from /home/deploy/eads/nbrocku/nbrocku_5469.xml
+D, [2024-09-25T13:32:59.780320 #1115400] DEBUG -- : beginning Traject::Indexer#process with settings: {"solr.url"=>"http://127.0.0.1:8983/solr/blacklight-core/", "component_traject_config"=>"/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_component_config.rb", "id_normalizer"=>"Arclight::NormalizedId", "date_normalizer"=>"Arclight::NormalizedDate", "title_normalizer"=>"Arclight::NormalizedTitle", "reader_class_name"=>"Arclight::Traject::NokogiriNamespacelessReader", "solr_writer.commit_on_close"=>"true", "repository"=>"nbrocku", "logger"=>#<Logger:0x0000e87670906c60 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000e87670906828 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x0000e87670fa5468 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @binmode=false, @reraise_write_errors=[], @mon_data=#<Monitor:0x0000e87670906418>, @mon_data_owner_object_id=4300>, @level_override={}>, "command_line.filename"=>"/home/deploy/eads/nbrocku/nbrocku_5469.xml", "writer_class_name"=>"Traject::SolrJsonWriter", "solr_writer.batch_size"=>100, "solr_writer.thread_pool"=>1, "processing_thread_pool"=>1, "log.batch_size.severity"=>"info", "allow_nil_values"=>false, "allow_duplicate_values"=>true, "allow_empty_fields"=>false}
+I, [2024-09-25T13:32:59.819146 #1115400]  INFO -- :    Traject::SolrJsonWriter writing to 'http://127.0.0.1:8983/solr/blacklight-core/update/json' in batches of 100 with 1 bg threads
+I, [2024-09-25T13:32:59.819214 #1115400]  INFO -- :    Traject::Indexer with 1 processing threads, reader: Arclight::Traject::NokogiriNamespacelessReader and writer: Traject::SolrJsonWriter
+D, [2024-09-25T13:32:59.820991 #1115400] DEBUG -- : Shutting down #processing mapper threadpool...
+D, [2024-09-25T13:33:00.589832 #1115400] DEBUG -- : #processing mapper threadpool shutdown complete.
+D, [2024-09-25T13:33:00.590122 #1115400] DEBUG -- : Traject::SolrJsonWriter: Shutting down thread pool, waiting if needed...
+D, [2024-09-25T13:33:00.590208 #1115400] DEBUG -- : Traject::SolrJsonWriter: sending batch of 1 to Solr
+D, [2024-09-25T13:33:00.623350 #1115400] DEBUG -- : Traject::SolrJsonWriter: Thread pool shutdown complete
+I, [2024-09-25T13:33:00.623462 #1115400]  INFO -- : Traject::SolrJsonWriter sending commit to solr at url http://127.0.0.1:8983/solr/blacklight-core/update/json...
+F, [2024-09-25T13:34:00.625577 #1115400] FATAL -- : Traject::CommandLine: Unexpected exception, terminating execution:     Exception: HTTPClient::ReceiveTimeoutError: execution expired
+    /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets'
+
+bundler: failed to load command: traject (/home/deploy/.asdf/installs/ruby/3.3.3/bin/traject)
+/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets': execution expired (HTTPClient::ReceiveTimeoutError)
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `block in parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:186:in `block in timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:193:in `timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:801:in `parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:784:in `read_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:561:in `get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1299:in `do_get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1245:in `do_get_block'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1019:in `block in do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1133:in `protect_keep_alive_disconnected'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1014:in `do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:856:in `request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:743:in `get'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:370:in `commit'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:339:in `close'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:638:in `complete'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:607:in `process'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/command_line.rb:73:in `execute'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/bin/traject:14:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `kernel_load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:23:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:455:in `exec'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/command.rb:28:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:35:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/base.rb:584:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:29:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:28:in `block in <top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:20:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `<main>'
+Indexed /home/deploy/eads/nbrocku/nbrocku_5469.xml (in 62.73 secs).
+Loading /home/deploy/eads/nbrocku/nbrocku_5482.xml into index...
+I, [2024-09-25T13:34:05.249736 #1115591]  INFO -- : traject (3.8.2) executing with: `-u http://127.0.0.1:8983/solr/blacklight-core/ -i xml -c /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_config.rb /home/deploy/eads/nbrocku/nbrocku_5482.xml`
+I, [2024-09-25T13:34:05.250115 #1115591]  INFO -- : Reading from /home/deploy/eads/nbrocku/nbrocku_5482.xml
+D, [2024-09-25T13:34:05.250379 #1115591] DEBUG -- : beginning Traject::Indexer#process with settings: {"solr.url"=>"http://127.0.0.1:8983/solr/blacklight-core/", "component_traject_config"=>"/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_component_config.rb", "id_normalizer"=>"Arclight::NormalizedId", "date_normalizer"=>"Arclight::NormalizedDate", "title_normalizer"=>"Arclight::NormalizedTitle", "reader_class_name"=>"Arclight::Traject::NokogiriNamespacelessReader", "solr_writer.commit_on_close"=>"true", "repository"=>"nbrocku", "logger"=>#<Logger:0x0000f09b1432d4d0 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000f09b1432d250 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x0000f09b149a7860 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @binmode=false, @reraise_write_errors=[], @mon_data=#<Monitor:0x0000f09b1432cf30>, @mon_data_owner_object_id=4300>, @level_override={}>, "command_line.filename"=>"/home/deploy/eads/nbrocku/nbrocku_5482.xml", "writer_class_name"=>"Traject::SolrJsonWriter", "solr_writer.batch_size"=>100, "solr_writer.thread_pool"=>1, "processing_thread_pool"=>1, "log.batch_size.severity"=>"info", "allow_nil_values"=>false, "allow_duplicate_values"=>true, "allow_empty_fields"=>false}
+I, [2024-09-25T13:34:05.289043 #1115591]  INFO -- :    Traject::SolrJsonWriter writing to 'http://127.0.0.1:8983/solr/blacklight-core/update/json' in batches of 100 with 1 bg threads
+I, [2024-09-25T13:34:05.289120 #1115591]  INFO -- :    Traject::Indexer with 1 processing threads, reader: Arclight::Traject::NokogiriNamespacelessReader and writer: Traject::SolrJsonWriter
+D, [2024-09-25T13:34:05.294475 #1115591] DEBUG -- : Shutting down #processing mapper threadpool...
+D, [2024-09-25T13:34:09.363066 #1115591] DEBUG -- : #processing mapper threadpool shutdown complete.
+D, [2024-09-25T13:34:09.363302 #1115591] DEBUG -- : Traject::SolrJsonWriter: Shutting down thread pool, waiting if needed...
+D, [2024-09-25T13:34:09.363415 #1115591] DEBUG -- : Traject::SolrJsonWriter: sending batch of 1 to Solr
+D, [2024-09-25T13:34:09.470775 #1115591] DEBUG -- : Traject::SolrJsonWriter: Thread pool shutdown complete
+I, [2024-09-25T13:34:09.470992 #1115591]  INFO -- : Traject::SolrJsonWriter sending commit to solr at url http://127.0.0.1:8983/solr/blacklight-core/update/json...
+F, [2024-09-25T13:35:09.472790 #1115591] FATAL -- : Traject::CommandLine: Unexpected exception, terminating execution:     Exception: HTTPClient::ReceiveTimeoutError: execution expired
+    /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets'
+
+bundler: failed to load command: traject (/home/deploy/.asdf/installs/ruby/3.3.3/bin/traject)
+/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets': execution expired (HTTPClient::ReceiveTimeoutError)
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `block in parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:186:in `block in timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:193:in `timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:801:in `parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:784:in `read_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:561:in `get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1299:in `do_get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1245:in `do_get_block'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1019:in `block in do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1133:in `protect_keep_alive_disconnected'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1014:in `do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:856:in `request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:743:in `get'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:370:in `commit'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:339:in `close'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:638:in `complete'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:607:in `process'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/command_line.rb:73:in `execute'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/bin/traject:14:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `kernel_load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:23:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:455:in `exec'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/command.rb:28:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:35:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/base.rb:584:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:29:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:28:in `block in <top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:20:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `<main>'
+Indexed /home/deploy/eads/nbrocku/nbrocku_5482.xml (in 66.359 secs).
+Loading /home/deploy/eads/nbrocku/nbrocku_5469.xml into index...
+I, [2024-09-25T14:44:00.266477 #1127428]  INFO -- : traject (3.8.2) executing with: `-u http://127.0.0.1:8983/solr/blacklight-core/ -i xml -c /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_config.rb /home/deploy/eads/nbrocku/nbrocku_5469.xml`
+I, [2024-09-25T14:44:00.267019 #1127428]  INFO -- : Reading from /home/deploy/eads/nbrocku/nbrocku_5469.xml
+D, [2024-09-25T14:44:00.267321 #1127428] DEBUG -- : beginning Traject::Indexer#process with settings: {"solr.url"=>"http://127.0.0.1:8983/solr/blacklight-core/", "component_traject_config"=>"/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_component_config.rb", "id_normalizer"=>"Arclight::NormalizedId", "date_normalizer"=>"Arclight::NormalizedDate", "title_normalizer"=>"Arclight::NormalizedTitle", "reader_class_name"=>"Arclight::Traject::NokogiriNamespacelessReader", "solr_writer.commit_on_close"=>"true", "repository"=>"nbrocku", "logger"=>#<Logger:0x0000e60012ada2c0 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000e60012ad9820 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x0000e600130e7050 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @binmode=false, @reraise_write_errors=[], @mon_data=#<Monitor:0x0000e60012ad9258>, @mon_data_owner_object_id=4300>, @level_override={}>, "command_line.filename"=>"/home/deploy/eads/nbrocku/nbrocku_5469.xml", "writer_class_name"=>"Traject::SolrJsonWriter", "solr_writer.batch_size"=>100, "solr_writer.thread_pool"=>1, "processing_thread_pool"=>1, "log.batch_size.severity"=>"info", "allow_nil_values"=>false, "allow_duplicate_values"=>true, "allow_empty_fields"=>false}
+I, [2024-09-25T14:44:00.309983 #1127428]  INFO -- :    Traject::SolrJsonWriter writing to 'http://127.0.0.1:8983/solr/blacklight-core/update/json' in batches of 100 with 1 bg threads
+I, [2024-09-25T14:44:00.310061 #1127428]  INFO -- :    Traject::Indexer with 1 processing threads, reader: Arclight::Traject::NokogiriNamespacelessReader and writer: Traject::SolrJsonWriter
+D, [2024-09-25T14:44:00.312067 #1127428] DEBUG -- : Shutting down #processing mapper threadpool...
+D, [2024-09-25T14:44:01.126165 #1127428] DEBUG -- : #processing mapper threadpool shutdown complete.
+D, [2024-09-25T14:44:01.126478 #1127428] DEBUG -- : Traject::SolrJsonWriter: Shutting down thread pool, waiting if needed...
+D, [2024-09-25T14:44:01.126568 #1127428] DEBUG -- : Traject::SolrJsonWriter: sending batch of 1 to Solr
+D, [2024-09-25T14:44:01.157161 #1127428] DEBUG -- : Traject::SolrJsonWriter: Thread pool shutdown complete
+I, [2024-09-25T14:44:01.157245 #1127428]  INFO -- : Traject::SolrJsonWriter sending commit to solr at url http://127.0.0.1:8983/solr/blacklight-core/update/json...
+F, [2024-09-25T14:45:01.158519 #1127428] FATAL -- : Traject::CommandLine: Unexpected exception, terminating execution:     Exception: HTTPClient::ReceiveTimeoutError: execution expired
+    /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets'
+
+bundler: failed to load command: traject (/home/deploy/.asdf/installs/ruby/3.3.3/bin/traject)
+/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets': execution expired (HTTPClient::ReceiveTimeoutError)
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `block in parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:186:in `block in timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:193:in `timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:801:in `parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:784:in `read_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:561:in `get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1299:in `do_get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1245:in `do_get_block'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1019:in `block in do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1133:in `protect_keep_alive_disconnected'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1014:in `do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:856:in `request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:743:in `get'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:370:in `commit'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:339:in `close'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:638:in `complete'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:607:in `process'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/command_line.rb:73:in `execute'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/bin/traject:14:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `kernel_load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:23:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:455:in `exec'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/command.rb:28:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:35:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/base.rb:584:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:29:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:28:in `block in <top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:20:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `<main>'
+Indexed /home/deploy/eads/nbrocku/nbrocku_5469.xml (in 62.878 secs).
+Loading /home/deploy/eads/nbrocku/nbrocku_5482.xml into index...
+I, [2024-09-25T14:45:05.413522 #1127820]  INFO -- : traject (3.8.2) executing with: `-u http://127.0.0.1:8983/solr/blacklight-core/ -i xml -c /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_config.rb /home/deploy/eads/nbrocku/nbrocku_5482.xml`
+I, [2024-09-25T14:45:05.413919 #1127820]  INFO -- : Reading from /home/deploy/eads/nbrocku/nbrocku_5482.xml
+D, [2024-09-25T14:45:05.414191 #1127820] DEBUG -- : beginning Traject::Indexer#process with settings: {"solr.url"=>"http://127.0.0.1:8983/solr/blacklight-core/", "component_traject_config"=>"/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_component_config.rb", "id_normalizer"=>"Arclight::NormalizedId", "date_normalizer"=>"Arclight::NormalizedDate", "title_normalizer"=>"Arclight::NormalizedTitle", "reader_class_name"=>"Arclight::Traject::NokogiriNamespacelessReader", "solr_writer.commit_on_close"=>"true", "repository"=>"nbrocku", "logger"=>#<Logger:0x0000ed209c6a7688 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000ed209c6a6c38 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x0000ed209cca30c8 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @binmode=false, @reraise_write_errors=[], @mon_data=#<Monitor:0x0000ed209c6a6490>, @mon_data_owner_object_id=4300>, @level_override={}>, "command_line.filename"=>"/home/deploy/eads/nbrocku/nbrocku_5482.xml", "writer_class_name"=>"Traject::SolrJsonWriter", "solr_writer.batch_size"=>100, "solr_writer.thread_pool"=>1, "processing_thread_pool"=>1, "log.batch_size.severity"=>"info", "allow_nil_values"=>false, "allow_duplicate_values"=>true, "allow_empty_fields"=>false}
+I, [2024-09-25T14:45:05.452372 #1127820]  INFO -- :    Traject::SolrJsonWriter writing to 'http://127.0.0.1:8983/solr/blacklight-core/update/json' in batches of 100 with 1 bg threads
+I, [2024-09-25T14:45:05.452436 #1127820]  INFO -- :    Traject::Indexer with 1 processing threads, reader: Arclight::Traject::NokogiriNamespacelessReader and writer: Traject::SolrJsonWriter
+D, [2024-09-25T14:45:05.458171 #1127820] DEBUG -- : Shutting down #processing mapper threadpool...
+D, [2024-09-25T14:45:11.709837 #1127820] DEBUG -- : #processing mapper threadpool shutdown complete.
+D, [2024-09-25T14:45:11.710885 #1127820] DEBUG -- : Traject::SolrJsonWriter: Shutting down thread pool, waiting if needed...
+D, [2024-09-25T14:45:11.711010 #1127820] DEBUG -- : Traject::SolrJsonWriter: sending batch of 1 to Solr
+D, [2024-09-25T14:45:11.856378 #1127820] DEBUG -- : Traject::SolrJsonWriter: Thread pool shutdown complete
+I, [2024-09-25T14:45:11.856658 #1127820]  INFO -- : Traject::SolrJsonWriter sending commit to solr at url http://127.0.0.1:8983/solr/blacklight-core/update/json...
+F, [2024-09-25T14:46:11.858313 #1127820] FATAL -- : Traject::CommandLine: Unexpected exception, terminating execution:     Exception: HTTPClient::ReceiveTimeoutError: execution expired
+    /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets'
+
+bundler: failed to load command: traject (/home/deploy/.asdf/installs/ruby/3.3.3/bin/traject)
+/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets': execution expired (HTTPClient::ReceiveTimeoutError)
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `block in parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:186:in `block in timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:193:in `timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:801:in `parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:784:in `read_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:561:in `get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1299:in `do_get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1245:in `do_get_block'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1019:in `block in do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1133:in `protect_keep_alive_disconnected'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1014:in `do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:856:in `request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:743:in `get'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:370:in `commit'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:339:in `close'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:638:in `complete'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:607:in `process'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/command_line.rb:73:in `execute'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/bin/traject:14:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `kernel_load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:23:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:455:in `exec'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/command.rb:28:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:35:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/base.rb:584:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:29:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:28:in `block in <top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:20:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `<main>'
+Indexed /home/deploy/eads/nbrocku/nbrocku_5482.xml (in 68.31 secs).
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 8: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 9: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 9: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 10: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 9: bundle: command not found
+/home/deploy/scripts/harvest/archipelago/archipelago-xml-files.sh: line 9: bundle: command not found
+Loading /home/deploy/eads/nbrocku/nbrocku_5469.xml into index...
+I, [2024-10-01T10:13:36.237170 #2838116]  INFO -- : traject (3.8.2) executing with: `-u http://127.0.0.1:8983/solr/blacklight-core/ -i xml -c /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_config.rb /home/deploy/eads/nbrocku/nbrocku_5469.xml`
+I, [2024-10-01T10:13:36.237564 #2838116]  INFO -- : Reading from /home/deploy/eads/nbrocku/nbrocku_5469.xml
+D, [2024-10-01T10:13:36.237856 #2838116] DEBUG -- : beginning Traject::Indexer#process with settings: {"solr.url"=>"http://127.0.0.1:8983/solr/blacklight-core/", "component_traject_config"=>"/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_component_config.rb", "id_normalizer"=>"Arclight::NormalizedId", "date_normalizer"=>"Arclight::NormalizedDate", "title_normalizer"=>"Arclight::NormalizedTitle", "reader_class_name"=>"Arclight::Traject::NokogiriNamespacelessReader", "solr_writer.commit_on_close"=>"true", "repository"=>"nbrocku", "logger"=>#<Logger:0x0000f16967f0f330 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000f16967f0e7f0 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x0000f16968502a30 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @binmode=false, @reraise_write_errors=[], @mon_data=#<Monitor:0x0000f16967f0d670>, @mon_data_owner_object_id=4300>, @level_override={}>, "command_line.filename"=>"/home/deploy/eads/nbrocku/nbrocku_5469.xml", "writer_class_name"=>"Traject::SolrJsonWriter", "solr_writer.batch_size"=>100, "solr_writer.thread_pool"=>1, "processing_thread_pool"=>1, "log.batch_size.severity"=>"info", "allow_nil_values"=>false, "allow_duplicate_values"=>true, "allow_empty_fields"=>false}
+I, [2024-10-01T10:13:36.276778 #2838116]  INFO -- :    Traject::SolrJsonWriter writing to 'http://127.0.0.1:8983/solr/blacklight-core/update/json' in batches of 100 with 1 bg threads
+I, [2024-10-01T10:13:36.276848 #2838116]  INFO -- :    Traject::Indexer with 1 processing threads, reader: Arclight::Traject::NokogiriNamespacelessReader and writer: Traject::SolrJsonWriter
+D, [2024-10-01T10:13:36.278698 #2838116] DEBUG -- : Shutting down #processing mapper threadpool...
+D, [2024-10-01T10:13:37.073673 #2838116] DEBUG -- : #processing mapper threadpool shutdown complete.
+D, [2024-10-01T10:13:37.073964 #2838116] DEBUG -- : Traject::SolrJsonWriter: Shutting down thread pool, waiting if needed...
+D, [2024-10-01T10:13:37.074051 #2838116] DEBUG -- : Traject::SolrJsonWriter: sending batch of 1 to Solr
+D, [2024-10-01T10:13:37.101043 #2838116] DEBUG -- : Traject::SolrJsonWriter: Thread pool shutdown complete
+I, [2024-10-01T10:13:37.101129 #2838116]  INFO -- : Traject::SolrJsonWriter sending commit to solr at url http://127.0.0.1:8983/solr/blacklight-core/update/json...
+F, [2024-10-01T10:14:37.102282 #2838116] FATAL -- : Traject::CommandLine: Unexpected exception, terminating execution:     Exception: HTTPClient::ReceiveTimeoutError: execution expired
+    /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets'
+
+bundler: failed to load command: traject (/home/deploy/.asdf/installs/ruby/3.3.3/bin/traject)
+/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets': execution expired (HTTPClient::ReceiveTimeoutError)
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `block in parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:186:in `block in timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:193:in `timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:801:in `parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:784:in `read_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:561:in `get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1299:in `do_get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1245:in `do_get_block'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1019:in `block in do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1133:in `protect_keep_alive_disconnected'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1014:in `do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:856:in `request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:743:in `get'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:370:in `commit'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:339:in `close'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:638:in `complete'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:607:in `process'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/command_line.rb:73:in `execute'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/bin/traject:14:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `kernel_load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:23:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:455:in `exec'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/command.rb:28:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:35:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/base.rb:584:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:29:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:28:in `block in <top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:20:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `<main>'
+Indexed /home/deploy/eads/nbrocku/nbrocku_5469.xml (in 62.773 secs).
+Loading /home/deploy/eads/nbrocku/nbrocku_5482.xml into index...
+I, [2024-10-01T10:14:41.562051 #2838306]  INFO -- : traject (3.8.2) executing with: `-u http://127.0.0.1:8983/solr/blacklight-core/ -i xml -c /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_config.rb /home/deploy/eads/nbrocku/nbrocku_5482.xml`
+I, [2024-10-01T10:14:41.562439 #2838306]  INFO -- : Reading from /home/deploy/eads/nbrocku/nbrocku_5482.xml
+D, [2024-10-01T10:14:41.562721 #2838306] DEBUG -- : beginning Traject::Indexer#process with settings: {"solr.url"=>"http://127.0.0.1:8983/solr/blacklight-core/", "component_traject_config"=>"/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_component_config.rb", "id_normalizer"=>"Arclight::NormalizedId", "date_normalizer"=>"Arclight::NormalizedDate", "title_normalizer"=>"Arclight::NormalizedTitle", "reader_class_name"=>"Arclight::Traject::NokogiriNamespacelessReader", "solr_writer.commit_on_close"=>"true", "repository"=>"nbrocku", "logger"=>#<Logger:0x0000e1bf9a7bc258 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000e1bf9a7bbf10 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x0000e1bf9ae94760 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @binmode=false, @reraise_write_errors=[], @mon_data=#<Monitor:0x0000e1bf9a7bbb00>, @mon_data_owner_object_id=4300>, @level_override={}>, "command_line.filename"=>"/home/deploy/eads/nbrocku/nbrocku_5482.xml", "writer_class_name"=>"Traject::SolrJsonWriter", "solr_writer.batch_size"=>100, "solr_writer.thread_pool"=>1, "processing_thread_pool"=>1, "log.batch_size.severity"=>"info", "allow_nil_values"=>false, "allow_duplicate_values"=>true, "allow_empty_fields"=>false}
+I, [2024-10-01T10:14:41.601787 #2838306]  INFO -- :    Traject::SolrJsonWriter writing to 'http://127.0.0.1:8983/solr/blacklight-core/update/json' in batches of 100 with 1 bg threads
+I, [2024-10-01T10:14:41.601858 #2838306]  INFO -- :    Traject::Indexer with 1 processing threads, reader: Arclight::Traject::NokogiriNamespacelessReader and writer: Traject::SolrJsonWriter
+D, [2024-10-01T10:14:41.606868 #2838306] DEBUG -- : Shutting down #processing mapper threadpool...
+D, [2024-10-01T10:14:45.570237 #2838306] DEBUG -- : #processing mapper threadpool shutdown complete.
+D, [2024-10-01T10:14:45.570563 #2838306] DEBUG -- : Traject::SolrJsonWriter: Shutting down thread pool, waiting if needed...
+D, [2024-10-01T10:14:45.570743 #2838306] DEBUG -- : Traject::SolrJsonWriter: sending batch of 1 to Solr
+D, [2024-10-01T10:14:45.663687 #2838306] DEBUG -- : Traject::SolrJsonWriter: Thread pool shutdown complete
+I, [2024-10-01T10:14:45.663770 #2838306]  INFO -- : Traject::SolrJsonWriter sending commit to solr at url http://127.0.0.1:8983/solr/blacklight-core/update/json...
+F, [2024-10-01T10:15:45.665324 #2838306] FATAL -- : Traject::CommandLine: Unexpected exception, terminating execution:     Exception: HTTPClient::ReceiveTimeoutError: execution expired
+    /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets'
+
+bundler: failed to load command: traject (/home/deploy/.asdf/installs/ruby/3.3.3/bin/traject)
+/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets': execution expired (HTTPClient::ReceiveTimeoutError)
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `block in parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:186:in `block in timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:193:in `timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:801:in `parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:784:in `read_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:561:in `get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1299:in `do_get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1245:in `do_get_block'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1019:in `block in do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1133:in `protect_keep_alive_disconnected'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1014:in `do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:856:in `request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:743:in `get'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:370:in `commit'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:339:in `close'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:638:in `complete'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:607:in `process'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/command_line.rb:73:in `execute'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/bin/traject:14:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `kernel_load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:23:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:455:in `exec'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/command.rb:28:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:35:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/base.rb:584:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:29:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:28:in `block in <top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:20:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `<main>'
+Indexed /home/deploy/eads/nbrocku/nbrocku_5482.xml (in 65.983 secs).
+Loading /home/deploy/eads/nbrocku/nbrocku_5489.xml into index...
+I, [2024-10-01T10:19:03.513206 #2839298]  INFO -- : traject (3.8.2) executing with: `-u http://127.0.0.1:8983/solr/blacklight-core/ -i xml -c /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_config.rb /home/deploy/eads/nbrocku/nbrocku_5489.xml`
+I, [2024-10-01T10:19:03.513600 #2839298]  INFO -- : Reading from /home/deploy/eads/nbrocku/nbrocku_5489.xml
+D, [2024-10-01T10:19:03.513879 #2839298] DEBUG -- : beginning Traject::Indexer#process with settings: {"solr.url"=>"http://127.0.0.1:8983/solr/blacklight-core/", "component_traject_config"=>"/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/arclight-1.4.0/lib/arclight/traject/ead2_component_config.rb", "id_normalizer"=>"Arclight::NormalizedId", "date_normalizer"=>"Arclight::NormalizedDate", "title_normalizer"=>"Arclight::NormalizedTitle", "reader_class_name"=>"Arclight::Traject::NokogiriNamespacelessReader", "solr_writer.commit_on_close"=>"true", "repository"=>"nbrocku", "logger"=>#<Logger:0x0000e34cb4bf5768 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000e34cb4bf5178 @datetime_format=nil>, @formatter=nil, @logdev=#<Logger::LogDevice:0x0000e34cb5295000 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDERR>>, @binmode=false, @reraise_write_errors=[], @mon_data=#<Monitor:0x0000e34cb4bf4160>, @mon_data_owner_object_id=4300>, @level_override={}>, "command_line.filename"=>"/home/deploy/eads/nbrocku/nbrocku_5489.xml", "writer_class_name"=>"Traject::SolrJsonWriter", "solr_writer.batch_size"=>100, "solr_writer.thread_pool"=>1, "processing_thread_pool"=>1, "log.batch_size.severity"=>"info", "allow_nil_values"=>false, "allow_duplicate_values"=>true, "allow_empty_fields"=>false}
+I, [2024-10-01T10:19:03.553328 #2839298]  INFO -- :    Traject::SolrJsonWriter writing to 'http://127.0.0.1:8983/solr/blacklight-core/update/json' in batches of 100 with 1 bg threads
+I, [2024-10-01T10:19:03.553401 #2839298]  INFO -- :    Traject::Indexer with 1 processing threads, reader: Arclight::Traject::NokogiriNamespacelessReader and writer: Traject::SolrJsonWriter
+D, [2024-10-01T10:19:03.554454 #2839298] DEBUG -- : Shutting down #processing mapper threadpool...
+D, [2024-10-01T10:19:03.690895 #2839298] DEBUG -- : #processing mapper threadpool shutdown complete.
+D, [2024-10-01T10:19:03.691165 #2839298] DEBUG -- : Traject::SolrJsonWriter: Shutting down thread pool, waiting if needed...
+D, [2024-10-01T10:19:03.691274 #2839298] DEBUG -- : Traject::SolrJsonWriter: sending batch of 1 to Solr
+D, [2024-10-01T10:19:03.700766 #2839298] DEBUG -- : Traject::SolrJsonWriter: Thread pool shutdown complete
+I, [2024-10-01T10:19:03.700857 #2839298]  INFO -- : Traject::SolrJsonWriter sending commit to solr at url http://127.0.0.1:8983/solr/blacklight-core/update/json...
+F, [2024-10-01T10:20:03.702052 #2839298] FATAL -- : Traject::CommandLine: Unexpected exception, terminating execution:     Exception: HTTPClient::ReceiveTimeoutError: execution expired
+    /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets'
+
+bundler: failed to load command: traject (/home/deploy/.asdf/installs/ruby/3.3.3/bin/traject)
+/home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `gets': execution expired (HTTPClient::ReceiveTimeoutError)
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:805:in `block in parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:186:in `block in timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/timeout-0.4.1/lib/timeout.rb:193:in `timeout'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:801:in `parse_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:784:in `read_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient/session.rb:561:in `get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1299:in `do_get_header'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1245:in `do_get_block'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1019:in `block in do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1133:in `protect_keep_alive_disconnected'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:1014:in `do_request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:856:in `request'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/httpclient-2.8.3/lib/httpclient.rb:743:in `get'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:370:in `commit'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/solr_json_writer.rb:339:in `close'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:638:in `complete'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/indexer.rb:607:in `process'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/lib/traject/command_line.rb:73:in `execute'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/traject-3.8.2/bin/traject:14:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/traject:25:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:58:in `kernel_load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli/exec.rb:23:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:455:in `exec'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/command.rb:28:in `run'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:35:in `dispatch'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/vendor/thor/lib/thor/base.rb:584:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/cli.rb:29:in `start'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:28:in `block in <top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/site_ruby/3.3.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bundler-2.5.17/exe/bundle:20:in `<top (required)>'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `load'
+	from /home/deploy/.asdf/installs/ruby/3.3.3/bin/bundle:25:in `<main>'
+Indexed /home/deploy/eads/nbrocku/nbrocku_5489.xml (in 62.101 secs).

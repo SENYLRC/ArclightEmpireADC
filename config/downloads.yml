@@ -30,5 +30,5 @@ default:
 #  pdf:
  #   template: 'http://example.com/%{unitid}.pdf'
   ead:
-    template: 'https://beta.empireadc.org/ead/%{repository_id}/%{eadid}.xml'
+    template: 'https://empireadc.org/ead/%{repository_id}/%{eadid}.xml'
 

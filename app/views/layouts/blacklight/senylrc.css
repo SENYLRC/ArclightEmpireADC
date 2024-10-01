@@ -393,7 +393,7 @@
                 display: none
             }
         </style>
-        <link rel='stylesheet' id='wp-block-navigation-css' href='https://beta.empireadc.org/wp-includes/blocks/navigation/style.min.css?ver=6.4.3' media='all'/>
+        <link rel='stylesheet' id='wp-block-navigation-css' href='https://empireadc.org/wp-includes/blocks/navigation/style.min.css?ver=6.4.3' media='all'/>
         <style id='wp-block-navigation-inline-css'>
             .wp-block-navigation a:where(:not(.wp-element-button)) {
                 color: inherit;
@@ -1667,17 +1667,17 @@
                 z-index: 100000;
             }
         </style>
-        <link rel='stylesheet' id='slick-css' href='https://beta.empireadc.org/wp-content/themes/slick/style.css?ver=1.2.1' media='all'/>
-        <script src="https://beta.empireadc.org/wp-includes/js/dist/interactivity.min.js?ver=6.4.3" id="wp-interactivity-js" defer data-wp-strategy="defer"></script>
-        <script src="https://beta.empireadc.org/wp-includes/blocks/navigation/view.min.js?ver=e3d6f3216904b5b42831" id="wp-block-navigation-view-js" defer data-wp-strategy="defer"></script>
-        <link rel="https://api.w.org/" href="https://beta.empireadc.org/wp-json/"/>
-        <link rel="alternate" type="application/json" href="https://beta.empireadc.org/wp-json/wp/v2/pages/25"/>
-        <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://beta.empireadc.org/xmlrpc.php?rsd"/>
+        <link rel='stylesheet' id='slick-css' href='https://empireadc.org/wp-content/themes/slick/style.css?ver=1.2.1' media='all'/>
+        <script src="https://empireadc.org/wp-includes/js/dist/interactivity.min.js?ver=6.4.3" id="wp-interactivity-js" defer data-wp-strategy="defer"></script>
+        <script src="https://empireadc.org/wp-includes/blocks/navigation/view.min.js?ver=e3d6f3216904b5b42831" id="wp-block-navigation-view-js" defer data-wp-strategy="defer"></script>
+        <link rel="https://api.w.org/" href="https://empireadc.org/wp-json/"/>
+        <link rel="alternate" type="application/json" href="https://empireadc.org/wp-json/wp/v2/pages/25"/>
+        <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://empireadc.org/xmlrpc.php?rsd"/>
         <meta name="generator" content="WordPress 6.4.3"/>
-        <link rel="canonical" href="https://beta.empireadc.org/"/>
-        <link rel='shortlink' href='https://beta.empireadc.org/'/>
-        <link rel="alternate" type="application/json+oembed" href="https://beta.empireadc.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbeta.empireadc.org%2F"/>
-        <link rel="alternate" type="text/xml+oembed" href="https://beta.empireadc.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbeta.empireadc.org%2F&#038;format=xml"/>
+        <link rel="canonical" href="https://empireadc.org/"/>
+        <link rel='shortlink' href='https://empireadc.org/'/>
+        <link rel="alternate" type="application/json+oembed" href="https://empireadc.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fempireadc.org%2F"/>
+        <link rel="alternate" type="text/xml+oembed" href="https://empireadc.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fempireadc.org%2F&#038;format=xml"/>
         <style id="sccss">
             /* Enter Your Custom CSS Here */
             .ApplicationmyButton {
