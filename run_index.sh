@@ -9,6 +9,7 @@ fi
 # Set the value of nncea variable
 NNCEA="$1"
 
+curl "http://localhost:8983/solr/blacklight-core/update?commit=true" -d "<delete><query>id:${NNCEA}_*</query></delete>"
 # Create the log file if it doesn't exist
 touch /home/deploy/ArclightEmpireADC/empireadc_index_logs/${NNCEA}-index.log
 
