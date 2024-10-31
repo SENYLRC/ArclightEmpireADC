@@ -1,3 +1,12 @@
+<%# 
+These are my test cases when moding the file
+https://www.empireadc.org/search/catalog/nygvahs_5074
+https://www.empireadc.org/search/catalog/nygvahs_5468
+https://empireadc.org/search/catalog/npv_vc_student_materials
+https://empireadc.org/search/catalog/nbrocku_5497
+https://www.empireadc.org/search/catalog/nysspl_4388
+https://www.empireadc.org/search/catalog/nnmec_142
+ %>
 <%= tag.div id: t("arclight.views.show.sections.#{@section}").parameterize do %>
   <% if @heading %>
     <h3 class='al-show-sub-heading'>
@@ -30,7 +39,7 @@
                   <%= clean_value.split('/').last.gsub('_', ' ') %>
                 <% end %>
               </p>
-            <% elsif clean_value =~ /^https?:\/\/.*\.xlsx$/ %>
+            <% elsif clean_value =~ /^https?:\/\/.*\.(xlsx|xls)$/ %>
               <p>
                 <%= link_to clean_value, target: '_blank', rel: 'noopener noreferrer' do %>
                   <%= image_tag('excel_icon.png', alt: 'Excel Icon', class: 'excel-icon', style: 'height: 60px;') %>
