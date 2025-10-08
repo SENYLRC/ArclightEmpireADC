@@ -27,8 +27,8 @@ sample_unitid:
     # size_accessor: 'level'
 default:
   disabled: false
-#  pdf:
- #   template: 'http://example.com/%{unitid}.pdf'
+  pdf:
+    template: 'https://empireadc.org/ead/%{repository_id}/%{eadid}.prt'
   ead:
     template: 'https://empireadc.org/ead/%{repository_id}/%{eadid}.xml'
 

@@ -1,6 +1,6 @@
 nbmla:
   name: 'Adirondack Experience'
-  description: 'The Adirondack Experience collects and interprets objects that represent the lives of Adirondack visitors and residents. Opened in 1957 in the heart of Adirondack Park, it encompasses 23 buildings on 121 acres and is the largest cultural organization in New York''s North Country. The Experiences research library collections include books, manuscripts, government documents, maps, atlases, serials, microfilms, ephemera, and audio recordings relating to the history and culture of the Adirondack Mountains and northern New York State.'
+  description: 'The Adirondack Experience collects and interprets objects that represent the lives of Adirondack visitors and residents. Opened in 1957 in the heart of Adirondack Park, it encompasses 23 buildings on 121 acres and is the largest cultural organization in New York’s North Country. The Experiences research library collections include books, manuscripts, government documents, maps, atlases, serials, microfilms, ephemera, and audio recordings relating to the history and culture of the Adirondack Mountains and northern New York State.'
   thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/nbmla.png'
   location_html: |
     <div class='al-repository-street-address-address1'>PO Box 99</div>
@@ -8,7 +8,6 @@ nbmla:
     <div class='al-repository-url'><a href='https://www.theadkx.org/' target='_blank'>Link to repository site</a></div>
   contact_html: |
     <div class='al-repository-contact-phone'>(518) 352-7311 </div>
-    <div class='al-repository-contact-info'>igocker@theadkx.org</div>
 nali:
   name: 'Albany Institute of History & Art'
   description: 'The Albany Institute of History & Art Library is a non-circulating research library with collections related to the art, history, and culture of the upper Hudson Valley of New York. Collections include manuscript materials, photographs, maps, rare books, and other collections dating from the seventeenth century to the present.'
@@ -79,6 +78,32 @@ nbucc:
     <div class='al-repository-contact-phone'>(716) 883-7000</div>
     <div class='al-repository-contact-info'>info@canisius.edu</div>
   visit_note: 'Researchers are welcome by appointment only Monday-Friday 10-4 pm.   '
+nmbries:
+  name: 'Cary Institute of Ecosystem Studies'
+  description: 'Cary Institute of Ecosystem Studies (Cary Institute), formerly known as the Institute of Ecosystem Studies, is an independent, not-for-profit environmental research organization dedicated to the scientific study of the world’s ecosystems and the natural and human factors that influence them. Through collaborative efforts, we apply our science to policy and management that protects the environment and improves human wellbeing. The Cary Institute Archives serves as the repository for our permanent records and includes staff publications, photographs, audiovisual materials, theses, memorabilia and materials that document all aspects of our institutional history.  Many materials date back to our early years as the Cary Arboretum of the New York Botanical Garden.'
+  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/nmbries.png'
+  location_html: |
+    <div class='al-repository-street-address-building'>Tozer Ecosystem Science Building</div>
+    <div class='al-repository-street-address-address1'>2801 Sharon Turnpike</div>
+    <div class='al-repository-street-address-city_state_zip_country'>Millbrook, NY 12545, United States</div>
+    <div class='al-repository-url'><a href='https://www.caryinstitute.org/' target='_blank'>Link to repository site</a></div>
+  contact_html: |
+    <div class='al-repository-contact-phone'>(845) 677-5343</div>
+    <div class='al-repository-contact-info'>schulera@caryinstitute.org</div>
+nauhi:
+  name: 'Cayuga Museum of History and Art'
+  description: 'The Cayuga Museum of History and Art engages the community to appreciate local history, promotes the arts, and educates individuals about the invention of sound on film through the operation of the Museum, Case Research Laboratory, and Carriage House Theater. <br />
+<br />
+The Cayuga Museum has been collecting material of local relevancy since its founding in 1936, and today we are Cayuga County’s largest repository of cultural artifacts. The Museum is also incorporated with the Case Research Laboratory, obtained from Theodore Case in 1941. Mr. Case deeded to the Museum the Lab building and its contents, including letters, plans, equipment, and notebooks pertaining to the invention of sound technology, totaling over 6,000 objects.'
+  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/NAuHi.png'
+  location_html: |
+    <div class='al-repository-street-address-building'>Cayuga Museum of History and Art</div>
+    <div class='al-repository-street-address-address1'>203 Genesee Street</div>
+    <div class='al-repository-street-address-city_state_zip_country'>Auburn, NY 13021, United States</div>
+    <div class='al-repository-url'><a href='https://cayugamuseum.org/' target='_blank'>Link to repository site</a></div>
+  contact_html: |
+    <div class='al-repository-contact-phone'>315-253-8051</div>
+    <div class='al-repository-contact-info'>karyn@cayugamuseum.org</div>
 nyblhs:
   name: 'Center for Brooklyn History'
   description: 'The Center for Brooklyn History is your source for 33,000 books, 1,600 archival collections, 1,200 oral history interviews, 50,000 photographs, 2,000 maps, 8,000 artifacts, and 300 paintings that document the commercial, residential, community, and civic development of Brooklyn.'
@@ -122,16 +147,6 @@ nelmhi:
   contact_html: |
     <div class='al-repository-contact-phone'>(607) 734-4167</div>
     <div class='al-repository-contact-info'>cchs@chemungvalleymuseum.org</div>
-nncm:
-  name: 'Columbia University Medical Center'
-  description: 'Archives & Special Collections in the Augustus C. Long Health Sciences Library collects, preserves, organizes, and makes available rare and unique materials documenting the history of the Columbia University Irving Medical Center along with the health sciences in general.'
-  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/nncm.png'
-  location_html: |
-    <div class='al-repository-street-address-address1'>630 West 168th Street</div>
-    <div class='al-repository-street-address-city_state_zip_country'>New York, NY 10032, United States</div>
-    <div class='al-repository-url'><a href='https://www.library-archives.cumc.columbia.edu/collections/columbia-university-irving-medical-center-archives' target='_blank'>Link to repository site</a></div>
-  contact_html: |
-    <div class='al-repository-contact-phone'>212-305-2862</div>
 nnca:
   name: 'Columbia University: Avery Architecture and Fine Arts Library'
   description: 'Located in Avery Hall, the Avery Architectural and Fine Arts Library collects books and periodicals in architecture, historic preservation, art history, painting, sculpture, graphic arts, decorative arts, city planning, real estate, and archaeology. The Library contains more than 250,000 volumes and receives approximately 1,500 periodicals.'
@@ -421,13 +436,13 @@ nyczlshs:
   contact_html: |
     <div class='al-repository-contact-phone'>315-655-3200</div>
 npkmc:
-  name: 'Marist College'
+  name: 'Marist University'
   description: 'The Archives and Special Collections, located in the James A. Cannavino Library, holds research and primary resource materials. The strength and focus of our collections are in areas that reflect and support the teaching and research needs of students, faculty, staff, and researchers in the Marist Community.'
   thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/npkmc.png'
   location_html: |
     <div class='al-repository-street-address-address1'>3399 North Road</div>
     <div class='al-repository-street-address-city_state_zip_country'>Poughkeepsie, NY 12601, United States</div>
-    <div class='al-repository-url'><a href='https://library.marist.edu/archives/' target='_blank'>Link to repository site</a></div>
+    <div class='al-repository-url'><a href='https://archives.marist.edu' target='_blank'>Link to repository site</a></div>
   contact_html: |
     <div class='al-repository-contact-phone'>845-575-3364</div>
     <div class='al-repository-contact-info'>library.archives@marist.edu</div>
@@ -440,6 +455,16 @@ nnmm:
     <div class='al-repository-street-address-city_state_zip_country'>New York, NY 10028, United States</div>
   contact_html: |
     <div class='al-repository-contact-phone'>212-535-7710</div>
+nymol:
+  name: 'Montauk Library'
+  description: 'The Montauk Library Archives collects and preserves materials documenting the history, culture, and community of Montauk.'
+  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/nymol.png'
+  location_html: |
+    <div class='al-repository-street-address-address1'>871 Montauk Highway</div>
+    <div class='al-repository-street-address-city_state_zip_country'>Montauk, NY 11954, United States</div>
+    <div class='al-repository-url'><a href='https://montauklibrary.org/' target='_blank'>Link to repository site</a></div>
+  contact_html: |
+    <div class='al-repository-contact-info'>archives@montauklibrary.org</div>
 nyschmis:
   name: 'Museum of Innovation and Science'
   description: 'miSci, the Museum of Innovation and Science, is a dynamic destination which celebrates science, invention, and imagination. miSci explores the area''s rich technological heritage, with some of the region''s finest interactive exhibits and a research archive. The miSci Archives contains manuscript collections, photographs, trade literature, and other materials relating to the history of General Electric and the impact of innovation in electricity and electronics on communication, food preparation, transportation, power generation, and medical imaging.'
@@ -500,10 +525,21 @@ nsyoc:
     <div class='al-repository-street-address-city_state_zip_country'>Syracuse, NY 13215, United States</div>
     <div class='al-repository-url'><a href='https://www.sunyocc.edu/library/special-collections-archives' target='_blank'>Link to repository site</a></div>
   contact_html: |
+nsy:
+  name: 'Onondaga County Public Library, also known as Syracuse Public Library'
+  description: 'Local History/Genealogy (LHG) at OCPL is a research department specializing in the history of Syracuse, Onondaga County, New York State, the New England States, Pennsylvania and New Jersey.'
+  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/nsy.jpg'
+  location_html: |
+    <div class='al-repository-street-address-address1'>447 South Salina St.</div>
+    <div class='al-repository-street-address-city_state_zip_country'>Syracuse, NY 13202, United States</div>
+    <div class='al-repository-url'><a href='https://www.onlib.org/research/special-collections/local-history-genealogy' target='_blank'>Link to repository site</a></div>
+  contact_html: |
+    <div class='al-repository-contact-phone'>315-435-1900</div>
+    <div class='al-repository-contact-info'>reference@onlib.org</div>
 nmioc:
   name: 'Orange County Community College'
   description: 'The Orange County Community College Archive (also known as the History and Heritage Collection) was established in 1973 to collect, preserve and make available documents, photographs, as well as audio and video recordings relating to the history of Orange County Community College. The History and Heritage Collection has a twofold purpose:to make information about the College available to researchers and to provide support for exhibits related to the College. To these ends, the Archive is actively involved in collecting and preserving documents related to the establishment and history of Orange County Community College.'
-  thumbnail_url: 'https://www.empireadc.orghttps://empireadc.org/wp-content/uploads/repo_logos/nmioc.png'
+  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/nmioc.png'
   location_html: |
     <div class='al-repository-street-address-building'>Library</div>
     <div class='al-repository-street-address-address1'>115 South Street </div>
@@ -524,6 +560,27 @@ nnod:
     <div class='al-repository-url'><a href='https://psychiatry.weill.cornell.edu/research-institutes/dewitt-wallace-institute-psychiatry/oskar-diethelm-library' target='_blank'>Link to repository site</a></div>
   contact_html: |
     <div class='al-repository-contact-phone'>212-746-3728 </div>
+nyobpff:
+  name: 'Planting Fields Foundation'
+  description: 'Planting Fields Foundation holds archival collections that consist of papers, photographs, films, architectural drawings, and other materials related to the planning, construction, and maintenance of Planting Fields during the estate era of the Coe family. The collection covers the transformation of Planting Fields from a private estate to a public park and the formation of Planting Fields Foundation. It is an invaluable resource for studying the history of Planting Fields as well as the philanthropic efforts of the Coe family including the world trips taken by the Coe children.'
+  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/nyobpff-scaled.png'
+  location_html: |
+    <div class='al-repository-street-address-address1'>1395 Planting Fields Road</div>
+    <div class='al-repository-street-address-city_state_zip_country'>Oyster Bay, NY 11771, United States</div>
+    <div class='al-repository-url'><a href='https://plantingfields.org/' target='_blank'>Link to repository site</a></div>
+  contact_html: |
+    <div class='al-repository-contact-info'>info@plantingfields.org</div>
+nypotpm:
+  name: 'Potsdam Public Museum'
+  description: 'The Potsdam Public Museum is a non-profit educational institution. As such, it strives to collect, preserve, study and exhibit artifacts and materials relating to the history of Potsdam, NY, and the surrounding area.'
+  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/nypotpm.jpg'
+  location_html: |
+    <div class='al-repository-street-address-address1'>2 Park St., P.O. Box 5168</div>
+    <div class='al-repository-street-address-city_state_zip_country'>Potsdam, NY 13676, United States</div>
+    <div class='al-repository-url'><a href='https://www.potsdampublicmuseum.org' target='_blank'>Link to repository site</a></div>
+  contact_html: |
+    <div class='al-repository-contact-phone'>(315) 265-6910</div>
+    <div class='al-repository-contact-info'>museum@vi.potsdam.ny.us</div>
 ntr:
   name: 'Rensselaer Polytechnic Institute, Institute Archives and Special Collections'
   description: 'RPI’s Institute Archives documents the history of the Institute from its founding as the Rensselaer School in 1824 through to the present day, including permanent records of academic and administrative offices, documents pertaining to student clubs and organizations, and Institute publications. Special Collections are comprised of manuscript collections, rare books, pamphlets, and artifacts related to the history of science and technology. Among the department''s holdings are the Roebling Collection documenting the design and construction of the Brooklyn Bridge, George M. Low''s NASA papers, a substantial photograph collection, photo albums and scrapbooks highlighting student life, and biographical materials on RPI students, faculty, staff, and alumni.'
@@ -608,6 +665,17 @@ nschchi:
     <div class='al-repository-url'><a href='https://schenectadyhistorical.org/' target='_blank'>Link to repository site</a></div>
   contact_html: |
     <div class='al-repository-contact-phone'> 518 374 0263</div>
+nysnfhs:
+  name: 'Seneca Falls Historical Society'
+  description: 'Seneca Falls Historical Society is located in a 23 room Victorian mansion. It houses an extensive research library with materials on local history, women’s rights, genealogical information, periodicals, and microfilm. Seneca Falls Historical Society has rotating and constant exhibits ranging from women’s rights materials to a Victorian kitchen. The archives hold over 20,000 photographs and 200,000 items from personal papers to wills and deeds.'
+  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/NySnfHS.jpg'
+  location_html: |
+    <div class='al-repository-street-address-address1'>55 Cayuga Street</div>
+    <div class='al-repository-street-address-city_state_zip_country'>Seneca Falls, NY 13148, United States</div>
+    <div class='al-repository-url'><a href='https://sfhistoricalsociety.square.site/' target='_blank'>Link to repository site</a></div>
+  contact_html: |
+    <div class='al-repository-contact-phone'>(315) 568-8412</div>
+    <div class='al-repository-contact-info'>director@sfhistoricalsociety.org</div>
 nycntslh:
   name: 'St. Lawrence County Historical Association'
   description: 'The St. Lawrence County Historical Association is a not-for-profit membership organization and museum which serves as an educational resource for the use and benefit of the citizens of St. Lawrence County and others interested in the County''s history and traditions. The Association collects and preserves archival material and artifacts pertinent to the County''s history.'
@@ -637,7 +705,7 @@ nbrocku:
     <div class='al-repository-street-address-building'>Drake Memorial Library</div>
     <div class='al-repository-street-address-address1'>350 New Campus Drive</div>
     <div class='al-repository-street-address-city_state_zip_country'>Brockport, NY 14420, United States</div>
-    <div class='al-repository-url'><a href='https://www.brockport.edu/about/archives/' target='_blank'>Link to repository site</a></div>
+    <div class='al-repository-url'><a href='https://www.brockport.edu/library/archives/' target='_blank'>Link to repository site</a></div>
   contact_html: |
     <div class='al-repository-contact-phone'>585-395-2277</div>
 nbuul:
@@ -885,6 +953,43 @@ nru:
   contact_html: |
     <div class='al-repository-contact-phone'>(585) 275-2121</div>
     <div class='al-repository-contact-info'>archives@rochester.edu</div>
+nutc:
+  name: 'Utica University Archives'
+  description: 'The Utica University Archives contain permanent valuable records of Utica University and its history. Records include documentation of the founding of Utica College by Syracuse University; property information about the Oneida Square campus; papers of past deans, presidents and Boards of Trustees; college publications; visual media such as films, photographs, and videos; newspaper clippings; memorabilia; commencement materials and yearbooks.'
+  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/nutc.png'
+  location_html: |
+    <div class='al-repository-street-address-building'> Frank E. Gannett Memorial Library</div>
+    <div class='al-repository-street-address-address1'>Utica University</div>
+    <div class='al-repository-street-address-address2'>1600 Burrstone Road</div>
+    <div class='al-repository-street-address-city_state_zip_country'>Utica, NY 13502, United States</div>
+    <div class='al-repository-url'><a href='https://www.utica.edu/directory/library' target='_blank'>Link to repository site</a></div>
+  contact_html: |
+    <div class='al-repository-contact-phone'>(315) 792-3351</div>
+    <div class='al-repository-contact-info'>jcwinn@utica.edu</div>
+npv:
+  name: 'Vassar College'
+  description: 'The Archives & Special Collections Library is part of the Vassar College Libraries system. It holds the rare book, manuscript, and archival collections of the college. It collects, preserves, and makes available rare and unique collections, and also engages in teaching and outreach activities.'
+  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/npv.png'
+  location_html: |
+    <div class='al-repository-street-address-building'>Vassar College Main (Thompson) Library</div>
+    <div class='al-repository-street-address-address1'>124 Raymond Avenue; Box 20</div>
+    <div class='al-repository-street-address-city_state_zip_country'>Poughkeepsie, NY 12604, United States</div>
+    <div class='al-repository-url'><a href='https://library.vassar.edu/specialcollections/' target='_blank'>Link to repository site</a></div>
+  contact_html: |
+    <div class='al-repository-contact-phone'>(845) 437-5799</div>
+    <div class='al-repository-contact-info'>spcoll@vassar.edu</div>
+nynyva:
+  name: 'Visual AIDS'
+  description: 'Founded in 1988, Visual AIDS is the only contemporary arts organization committed to supporting artists living with HIV and preserving the legacies of artists lost to AIDS. The Visual AIDS Archive collects, describes, and preserves materials related to HIV-positive artists. The Archive contains materials pertaining to over 970 living artists and estates, consisting of physical slides, personal papers, artist statements, CVs, press clippings, exhibition announcements, correspondence with Visual AIDS, and other objects surrounding the lives and work of these artists. Our archival holdings constitute the only extant historical materials for many of these artists. The files also contain a small number of artists’ books, artworks on paper, personal photographs, and personal writing.'
+  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/nynyva.jpg'
+  location_html: |
+    <div class='al-repository-street-address-address1'>526 W. 26th Street</div>
+    <div class='al-repository-street-address-address2'>#309</div>
+    <div class='al-repository-street-address-city_state_zip_country'>New York, NY 10001, United States</div>
+    <div class='al-repository-url'><a href='https://visualaids.org' target='_blank'>Link to repository site</a></div>
+  contact_html: |
+    <div class='al-repository-contact-phone'>(212) 627-9855</div>
+    <div class='al-repository-contact-info'>archive@visualaids.org</div>
 naurw:
   name: 'Wells College'
   description: 'The Wells College Archives, located on the third floor of the Louis Jefferson Long Library, houses material documenting the history of Wells College from 1868 to the present. In addition to many collections, the Archives is also home to a growing collection of senior theses.'
