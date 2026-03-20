@@ -13,7 +13,7 @@ module Arclight
       search_service = Blacklight.repository_class.new(blacklight_config)
       @response = search_service.search(
         q: "level_ssim:Collection repository_ssim:\"#{@repository.name}\"",
-        rows: 100
+        rows: 200
       )
       @collections = @response.documents
     end

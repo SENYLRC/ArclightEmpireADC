@@ -277,6 +277,18 @@ nycoofam:
     <div class='al-repository-url'><a href='https://www.fenimoreartmuseum.org/' target='_blank'>Link to repository site</a></div>
   contact_html: |
     <div class='al-repository-contact-phone'>607-547-1400</div>
+nybrfbhs:
+  name: 'Fort Brewerton Historical Society Blockhouse Museum'
+  description: 'The Fort Brewerton Historical Society operates the Fort Brewerton Historical Park and Oliver Stevens Blockhouse Museum in Brewerton, New York.  Fort Brewerton was built by the British in 1759 to defend the passage of troops and supplies from Albany to the Port of Oswego.  The eight point star shape of the Fort’s original earthworks is still clearly visible.  The museum is a replica of the Blockhouse where Oliver Stevens and his family settled in 1789 and operated a trading post and tavern.  The Museum houses excavated artifacts and exhibits interpreting the history of the Fort and the surrounding area.  Its collections also include photographs, business directories and records, school records, genealogy and cemetery records, land deeds, diaries, newspaper clippings, military records, railroad and steamboat records, maps, books, and other historical resources.'
+  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/nybrfbhs.jpg'
+  location_html: |
+    <div class='al-repository-street-address-building'>Oliver Stevens Blockhouse Museum</div>
+    <div class='al-repository-street-address-address1'>9 US Route 11</div>
+    <div class='al-repository-street-address-address2'>PO Box 392</div>
+    <div class='al-repository-street-address-city_state_zip_country'>Brewerton, NY 13029, United States</div>
+  contact_html: |
+    <div class='al-repository-contact-phone'>315-668-8801</div>
+    <div class='al-repository-contact-info'>cemeyers53@aol.com</div>
 nnfr:
   name: 'Frick Art Reference Library'
   description: 'The Frick Art Reference Library provides public access to materials and programs focused on the study of fine and decorative arts created in the Western tradition from the fourth to the mid-twentieth century. It serves an international research community and supports institutional initiatives.'
@@ -317,6 +329,16 @@ noneoc:
   contact_html: |
     <div class='al-repository-contact-phone'>607-431-4000</div>
     <div class='al-repository-contact-info'>museum@hartwick.edu</div>
+nnh:
+  name: 'Hispanic Museum & Library'
+  description: 'The Hispanic Society of America was founded in 1904 by Archer Milton Huntington (1870-1955) with the object of establishing a free, public museum and reference library for the study of the art and culture of the Spain, Portugal, Latin America, and the Philippines. The collections of the Hispanic Society are unparalleled in their scope and quality outside of Spain, addressing nearly every aspect of culture in Spain, as well as a large part of Portugal and Latin America, into the 20th century. In addition to the museum, the Hispanic Society is home to a world-class research library with over 250,000 manuscripts, letters, and documents dating back to the 11th century. Early archives include the Altamira Archive, a collection of papers from Charles V and Philip II of Spain and various noble houses in Spain, dating from the mid-1500s to the late 18th century. For the Americas, among other holdings, we have archives pertaining to various haciendas in Mexico, and the letters written by Pedro I of Brazil to the Marquesa de Santos. Since its creation in 1904, the Hispanic Society has elected notable scholars and artists as corresponding members of the Society. The list of members is a veritable who’s who of Spanish and Hispanic authors, historians, artists, and musicians, most of whom exchanged letters and publications with the Society. In addition, other notable USA-based scholars have donated their libraries and correspondence to the Society which help build a history of the teaching of Spanish and Portuguese in the USA. In addition, we have the internal archives of the Society which also tell the story of the development of Hispanic studies in the USA.'
+  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/nnh.png'
+  location_html: |
+    <div class='al-repository-street-address-address1'>613 W 155th St</div>
+    <div class='al-repository-street-address-city_state_zip_country'>New York, NY 10032, United States</div>
+    <div class='al-repository-url'><a href='https://hispanicsociety.org/' target='_blank'>Link to repository site</a></div>
+  contact_html: |
+    <div class='al-repository-contact-info'>books@hispanicsociety.org</div>
 nygvahs:
   name: 'Historic Geneva'
   description: 'The Archives consist of the two-dimensional paper portion of our collection. We have 1,300 cubic feet of archives material, which includes 50,000 images. Geneva''s stories are captured in letters, diaries, ledgers and minute books, and photographs. Inventory of our material is ongoing, please contact us or visit our website for further information.'
@@ -455,6 +477,16 @@ nnmm:
     <div class='al-repository-street-address-city_state_zip_country'>New York, NY 10028, United States</div>
   contact_html: |
     <div class='al-repository-contact-phone'>212-535-7710</div>
+nmbr:
+  name: 'Millbrook Library'
+  description: 'The Millbrook Library houses a collection of historical material and memorabilia relating to Bennett College. Bennett College was founded in 1890 by May Friend Bennett as an educational institution for women and was in operation until 1978. The collection includes yearbooks, scrapbooks, photo albums, memorabilia, and various administrative documents relating to college operations.'
+  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/nmbr.jpg'
+  location_html: |
+    <div class='al-repository-street-address-address1'>3 Friendly Lane</div>
+    <div class='al-repository-street-address-city_state_zip_country'>Millbrook, NY 12592, United States</div>
+    <div class='al-repository-url'><a href='https://millbrooklibrary.org' target='_blank'>Link to repository site</a></div>
+  contact_html: |
+    <div class='al-repository-contact-phone'>(845) 677-3611</div>
 nymol:
   name: 'Montauk Library'
   description: 'The Montauk Library Archives collects and preserves materials documenting the history, culture, and community of Montauk.'
@@ -577,7 +609,7 @@ nypotpm:
   location_html: |
     <div class='al-repository-street-address-address1'>2 Park St., P.O. Box 5168</div>
     <div class='al-repository-street-address-city_state_zip_country'>Potsdam, NY 13676, United States</div>
-    <div class='al-repository-url'><a href='https://www.potsdampublicmuseum.org' target='_blank'>Link to repository site</a></div>
+    <div class='al-repository-url'><a href='https://www.potsdammuseumny.gov/' target='_blank'>Link to repository site</a></div>
   contact_html: |
     <div class='al-repository-contact-phone'>(315) 265-6910</div>
     <div class='al-repository-contact-info'>museum@vi.potsdam.ny.us</div>
@@ -635,10 +667,10 @@ nnttr:
     <div class='al-repository-street-address-city_state_zip_country'>Sleepy Hollow, NY 10591, United States</div>
     <div class='al-repository-url'><a href='https://rockarch.org/' target='_blank'>Link to repository site</a></div>
   contact_html: |
-nyhdu:
+nyjvrhm:
   name: 'Russian History Museum'
   description: 'The archival collection, measuring 450 linear feet, contain documents dealing with the history of the Russian emigration as well as materials from Imperial Russia. These include papers relating to the activities of political, military, and social organizations; the correspondence of various prominent Russian intellectuals; the correspondence of notable leaders of the Orthodox Church; and several collections containing photographic material that documents life in pre-revolutionary Russia and the Russian diaspora.'
-  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/nyhdu.png'
+  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/nyjvrhm.png'
   location_html: |
     <div class='al-repository-street-address-address1'>1407 Robinson Road</div>
     <div class='al-repository-street-address-city_state_zip_country'>Jordanville, NY 13361, United States</div>
@@ -676,6 +708,17 @@ nysnfhs:
   contact_html: |
     <div class='al-repository-contact-phone'>(315) 568-8412</div>
     <div class='al-repository-contact-info'>director@sfhistoricalsociety.org</div>
+nyskhis:
+  name: 'Skaneateles Historical Society'
+  description: 'The mission of the Skaneateles Historical Society is to conduct and encourage historical research and to collect, preserve and exhibit historical materials with a connection to the Town of Skaneateles.'
+  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/nyskhis.png'
+  location_html: |
+    <div class='al-repository-street-address-address1'>28 Hannum St</div>
+    <div class='al-repository-street-address-city_state_zip_country'>Skaneateles, NY 13152, United States</div>
+    <div class='al-repository-url'><a href='https://www.skaneateleshistoricalsociety.org/' target='_blank'>Link to repository site</a></div>
+  contact_html: |
+    <div class='al-repository-contact-phone'>315-685-1360</div>
+    <div class='al-repository-contact-info'>skaneateleshistoricalsociety@verizon.net</div>
 nycntslh:
   name: 'St. Lawrence County Historical Association'
   description: 'The St. Lawrence County Historical Association is a not-for-profit membership organization and museum which serves as an educational resource for the use and benefit of the citizens of St. Lawrence County and others interested in the County''s history and traditions. The Association collects and preserves archival material and artifacts pertinent to the County''s history.'
@@ -881,6 +924,16 @@ nysim:
   contact_html: |
     <div class='al-repository-contact-phone'>718.727.1135</div>
     <div class='al-repository-contact-info'>info@statenislandmuseum.org</div>
+nycenvm:
+  name: 'Suffolk County Vanderbilt Museum'
+  description: 'The archives at the Suffolk County Vanderbilt Museum collect, preserve, and make accessible the historic records and collections of William Kissam Vanderbilt II and select members of the Vanderbilt family. The Museum’s archives contain more than 13,000 unique items.'
+  thumbnail_url: 'https://empireadc.org/wp-content/uploads/repo_logos/nyscvm.png'
+  location_html: |
+    <div class='al-repository-street-address-address1'>180 Little Neck Road</div>
+    <div class='al-repository-street-address-city_state_zip_country'>Centerport, NY 11721, United States</div>
+    <div class='al-repository-url'><a href='https://www.vanderbiltmuseum.org/mansion/archives/' target='_blank'>Link to repository site</a></div>
+  contact_html: |
+    <div class='al-repository-contact-info'>alyson@vanderbiltmuseum.org</div>
 nsyu:
   name: 'Syracuse University'
   description: 'The Special Collections Research Center (SCRC) offers scholars and students a vibrant research and learning environment. We collect, preserve, and provide access to materials that document the history of our global society, including original manuscripts, photographs, architectural renderings, industrial design prototypes, graphic artworks, audio and moving image recordings, and much more. Today, the SCRC’s collections total approximately 150,000 printed items and over 30,000 linear feet of archival material in 2,400 separate collections, as well as the holdings of the renowned Belfer Audio Archive and the University Archives. Together, these collections offer unfiltered access to primary source material, the “authentic voice” of a writer or creator, from which scholars and students can develop their own views and create their own narratives.'
